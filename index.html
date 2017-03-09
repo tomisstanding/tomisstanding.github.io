@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thomas Standing</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" type="text/css">
+  <link href="style.css" rel="stylesheet">
+  <script type="text/javascript" src="bower_components/shine/dist/shine.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <main>
+    <h1 id="shine" class="name">Thomas Standing</h1>
+
+    <script type="text/javascript">
+      // use new shinejs.Shine(...) if Shine is already defined somewhere else
+      // var shine = new shinejs.Shine(document.getElementById('headline'));
+      var config = new shinejs.Config({
+      numSteps: 5,
+      opacity: 0.15,
+      opacityPow: 1.2,
+      offset: 0.15,
+      offsetPow: 1.8,
+      blur: 40,
+      blurPow: 1,
+      shadowRGB: new shinejs.Color(0, 0, 0)
+    });
+
+      var shine = new Shine(document.getElementById('shine'), config);
+
+      function handleMouseMove(event) {
+        shine.light.position.x = event.clientX;
+        shine.light.position.y = event.clientY;
+        shine.draw();
+      }
+
+      window.addEventListener('mousemove', handleMouseMove, false);
+    </script>
+  </main>
+</body>
+</html>
+
