@@ -24,4 +24,16 @@ $(() => {
   const windowHeight = $(window).height();
   $('.land').css('height', windowHeight - 50);
   $('#scroll-div').css('padding-top', windowHeight - 140);
-}
+
+  // after name and title come in, header will slide in from top
+  const header = $('.header');
+  setTimeout(() => {
+    header[0].classList.add('slideIn');
+  }, 1000);
+
+  // when header is clicked, page will scroll back to the top
+  header.click(() => {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  });
+
+});
