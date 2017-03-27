@@ -1,10 +1,15 @@
-  var shine = new Shine(document.getElementById('headline'));
+    var config = new shinejs.Config({
+      numSteps: 8,
+      opacity: 1,
+      shadowRGB: new shinejs.Color(98, 98, 98)
+    });
 
-  function handleMouseMove(event) {
-    shine.light.position.x = event.clientX;
-    shine.light.position.y = event.clientY;
-    shine.draw();
-  }
+    var shine = new shinejs.Shine(document.getElementById('thomas'), config);
 
-  window.addEventListener('mousemove', handleMouseMove, false);
+    function handleMouseMove(event) {
+      shine.light.position.x = event.clientX;
+      shine.light.position.y = event.clientY;
+      shine.draw();
+    }
 
+    window.addEventListener('mousemove', handleMouseMove, false);

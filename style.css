@@ -1,7 +1,7 @@
-.name {
+#thomas {
   margin: auto;
   position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  top: 0; left: 0; bottom: 100; right: 0;
   width: 100%;
 
   display: table;
@@ -17,5 +17,4 @@
 
   letter-spacing: -0.02em;
   line-height: 1.2em;
-
 }
