@@ -1,15 +1,20 @@
-    var config = new shinejs.Config({
-      numSteps: 8,
-      opacity: 1,
-      shadowRGB: new shinejs.Color(98, 98, 98)
-    });
+'use strict';
+console.log('JS connected');
 
-    var shine = new shinejs.Shine(document.getElementById('thomas'), config);
+// config new shine object for name in header section
+var config = new shinejs.Config({
+  numSteps: 8,
+  opacity: 1,
+  shadowRGB: new shinejs.Color(225, 229, 237)
+});
 
-    function handleMouseMove(event) {
-      shine.light.position.x = event.clientX;
-      shine.light.position.y = event.clientY;
-      shine.draw();
-    }
+var shine = new shinejs.Shine(document.getElementById('headline'), config);
 
-    window.addEventListener('mousemove', handleMouseMove, false);
+function handleMouseMove(event) {
+  shine.light.position.x = event.clientX;
+  shine.light.position.y = event.clientY;
+  shine.draw();
+}
+
+window.addEventListener('mousemove', handleMouseMove, false);
+// end shine object
