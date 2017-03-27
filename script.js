@@ -18,3 +18,10 @@ function handleMouseMove(event) {
 
 window.addEventListener('mousemove', handleMouseMove, false);
 // end shine object
+
+$(() => {
+  // set landing page to height of window
+  const windowHeight = $(window).height();
+  $('.land').css('height', windowHeight - 50);
+  $('#scroll-div').css('padding-top', windowHeight - 140);
+}
