@@ -75,7 +75,7 @@ body {
 
 footer {
   height: 60px;
-  background-color: #B76EB7;
+  background-color: grey;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -103,4 +103,64 @@ footer img {
 #foot-github {
   max-width: 58%;
   max-height: 58%;
+}
+
+header {
+  position: fixed;
+  height: 60px;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-transition: 1.5s ease-in-out;
+  -moz-transition: 1.5s ease-in-out;
+  -o-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+header.slideIn {
+  -webkit-transform: translateY(100px);
+  -moz-transform: translateY(100px);
+  -o-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  transform: translateY(100px);
+  }
+
+.header > p {
+  padding: 20px;
+  letter-spacing: 3px;
+}
+
+.header > p:hover {
+  cursor: pointer;
+}
+
+.hidden-links {
+  display: none;
+}
+
+/* Shine.js in header */
+.thomas {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 250px; right: 0;
+  width: 100%;
+
+  display: table;
+  height: auto;
+
+  color: #FAFAFA;
+  text-transform: uppercase;
+  text-align: center;
+
+  font-size: 8em;
+  font-family: 'Rock Salt', cursive;
+  font-weight: 800;
+
+  letter-spacing: -0.02em;
+  line-height: 1.2em;
 }
