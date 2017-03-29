@@ -4,7 +4,7 @@ console.log('JS connected');
 // config new shine object for name in header section
 var config = new shinejs.Config({
   numSteps: 8,
-  opacity: 1,
+  opacity: 5,
   shadowRGB: new shinejs.Color(225, 229, 237)
 });
 

@@ -38,6 +38,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans Condensed', sans-serif;
+  color: #808589;
   height: 100%;
 }
 
@@ -173,10 +174,10 @@ header.slideIn {
 .thomas {
   margin: auto;
   position: absolute;
-  top: 0; left: 0; bottom: 250px; right: 0;
+  top: 50px; left: 0; bottom: 250px; right: 0;
   width: 100%;
 
-  display: table;
+  display: flex;
   height: auto;
 
   color: #FAFAFA;
@@ -189,4 +190,29 @@ header.slideIn {
 
   letter-spacing: -0.02em;
   line-height: 1.2em;
+  background-size: contain;
+}
+
+@media (max-width:600px) {
+  .thomas {
+    margin: auto;
+    position: absolute;
+    top: 50px; left: 0; bottom: 250px; right: 150px;
+    width: 100px;
+
+    display: flex;
+    height: auto;
+
+    color: #FAFAFA;
+    text-transform: uppercase;
+    text-align: center;
+
+    font-size: 10vw;
+    font-family: 'Rock Salt', cursive;
+    font-weight: 800;
+
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
+    background-size: contain;
+  }
 }
