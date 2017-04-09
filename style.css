@@ -170,6 +170,16 @@ header.slideIn {
   z-index: 9999;
 }
 
+/* Overlay for each project photo container */
+.image-container {
+  height:100%;
+  width: 100%;
+  opacity: 0.8;
+  z-index: 1;
+  margin-top: -500px;
+  overflow: hidden;
+}
+
 /* Shine.js in header */
 .thomas {
   margin: auto;
