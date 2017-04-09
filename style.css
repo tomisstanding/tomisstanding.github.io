@@ -178,7 +178,7 @@ header.slideIn {
 .image-container {
   height:100%;
   width: 100%;
-  opacity: 0.8;
+  opacity: 0.9;
   z-index: 1;
   margin-top: -500px;
   overflow: hidden;
@@ -192,7 +192,7 @@ header.slideIn {
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
-  filter: blur(5px);
+  filter: blur(10px);
 }
 
 .image-container > img:hover {
@@ -277,7 +277,7 @@ header.slideIn {
 .overlay > p {
   font-size: 25px;
   margin: 5px;
-  color: white;
+  color: black;
   letter-spacing: 2px;
 }
 
