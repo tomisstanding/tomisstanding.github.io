@@ -379,6 +379,25 @@ header.slideIn {
   transform: translateY(0);
 }
 
+.technology {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px 0 20px;
+}
+
+.technology > h2 {
+  margin: 5px;
+}
+
+.technology > p {
+  margin: 5px;
+  font-size: 20px;
+  color: gray;
+  text-align: center;
+}
+
 /* Shine.js in header */
 .thomas {
   margin: auto;
