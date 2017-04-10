@@ -52,6 +52,13 @@ $(() => {
   setTimeout(() => {
     linkedIn.addClass('animated2 fadeInUp');
   }, 1600);
+  setTimeout(() => {
+    scroll.addClass('animated fadeInUpScroll');
+  }, 1700);
+  setTimeout(() => {
+    scrollIcon.addClass('animated infinite wobble')
+  }, 4000);
+
 
 
 });
