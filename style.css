@@ -421,6 +421,19 @@ header.slideIn {
   background-size: contain;
 }
 
+@media only screen and (max-width: 1150px) {
+  .project-img {
+    height: 40%;
+    width: 28%;
+  }
+
+  #project3-info > .project-img {
+    height: 48%;
+    width: 40%;
+    margin: 50px;
+  }
+}
+
 @media (max-width:768px) {
   .thomas {
     margin: auto;
