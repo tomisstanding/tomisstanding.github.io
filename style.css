@@ -110,6 +110,11 @@ footer img {
   max-height: 58%;
 }
 
+#github-logo {
+  width: 60px;
+  height: 47px;
+}
+
 header {
   position: fixed;
   height: 60px;

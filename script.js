@@ -59,6 +59,66 @@ $(() => {
     scrollIcon.addClass('animated infinite wobble')
   }, 4000);
 
+// add animations to icons on mouseenter
+  email.on('mouseenter', function() {
+    email.css({
+      'opacity': '0.6',
+      'transform': 'none'
+    });
+    email.removeClass('animated2 fadeInUp');
+    email.addClass('animated tada')
+  })
+  email.on('mouseout', function() {
+    email.removeClass('animated');
+    email.removeClass('tada')
+  })
+
+  github.on('mouseenter', function() {
+    github.css({
+      'opacity': '0.6',
+      'transform': 'none'
+    });
+    github.removeClass('animated2 fadeInUp');
+    github.addClass('animated tada');
+  })
+  github.on('mouseout', function() {
+    github.removeClass('animated');
+    github.removeClass('tada')
+  })
+
+  linkedIn.on('mouseenter', function() {
+    linkedIn.css({
+      'opacity': '0.6',
+      'transform': 'none'
+    });
+    linkedIn.removeClass('animated2 fadeInUp');
+    linkedIn.addClass('animated tada')
+  })
+  linkedIn.on('mouseout', function() {
+    linkedIn.removeClass('animated');
+    linkedIn.removeClass('tada')
+  })
+
+  // Code help from ScrollMagic101 at https://ihatetomatoes.net
+  // Init ScrollMagic
+  const controller = new ScrollMagic.Controller();
+
+  // build a new scence to fade out landing info
+  const landingFadeOut =  new ScrollMagic.Scene({
+    triggerElement: '.icons',
+    triggerHook: 0.2
+  })
+  .setClassToggle('.land', 'fade-out')
+  .addTo(controller);
+
+  // build a new scene to fade in about me
+  const aboutMeFade = new ScrollMagic.Scene({
+    triggerElement: '.aboutme p',
+    duration: '60%',
+    triggerHook: 0.8
+  })
+  .setClassToggle('.aboutme', 'fade-in')
+  .addTo(controller);
 
 
 });
