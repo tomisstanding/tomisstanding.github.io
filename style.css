@@ -549,3 +549,111 @@ header.slideIn {
     padding: 0 10px 0 10px;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .content-container > p {
+    padding: 30px 75px 0 75px;
+  }
+
+  .project-img {
+    width: 55%;
+  }
+
+  #project3-info > .project-img {
+    width: 55%;
+  }
+
+  #project2 > .content-container > h1 {
+    line-height: 1;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .aboutme > p {
+    padding: 0 20px;
+  }
+
+  .content-container > h1 {
+    text-shadow: none;
+  }
+
+  .content-container > h1 {
+    font-size: 50px;
+  }
+
+  .content-container > p {
+    padding: 15px 30px 20px 30px;
+    font-size: 19px;
+  }
+
+  .hidden-image {
+    display: flex;
+  }
+
+  .hidden-links {
+    display: none;
+  }
+
+  .mobile-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .mobile-links > a {
+    font-size: 25px;
+    border: 3px solid gray;
+    margin: 10px;
+    padding: 2px 20px 4px 20px;
+    text-decoration: none;
+    color: gray;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .mobile-links > a:hover {
+    background-color: gray;
+    color: white;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .project-info {
+    flex-direction: column;
+    height: 700px;
+    padding: 60px 0;
+  }
+
+  #project3-info {
+    height: 500px;
+  }
+
+  .project-img {
+    height: 30%;
+    width: 70%;
+    margin: 15px;
+  }
+
+  #project3-info > .project-img {
+    height: 30%;
+    width: 70%;
+    margin: 15px;
+  }
+
+  #project3 > .content-container > p {
+    padding: 15px 30px 20px 30px;
+    font-size: 19px;
+  }
+
+
+  #project2-info {
+    flex-direction: column-reverse;
+  }
+
+  .technology {
+    margin-bottom: 30px;
+  }
+}
+
