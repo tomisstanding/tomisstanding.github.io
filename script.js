@@ -36,4 +36,14 @@ $(() => {
     $("html, body").animate({ scrollTop: 0 }, "slow");
   });
 
+  const github = $('#github-logo');
+  const email = $('#email-logo');
+  const linkedIn = $('#linked-in');
+  const scroll = $('#scroll-div');
+  const scrollIcon = $('#scroll');
+
+  setTimeout(() => {
+    email.addClass('animated2 fadeInUp');
+  }, 1200);
+
 });
