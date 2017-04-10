@@ -434,6 +434,31 @@ header.slideIn {
   }
 }
 
+@media only screen and (max-width: 900px) {
+  .content-container > p {
+    padding: 50px 75px 0 75px;
+  }
+
+  #project3 > .content-container > p {
+    padding: 50px 75px 0 75px;
+  }
+
+  .project-info {
+    height: 550px;
+  }
+
+  .project-img {
+    height: 35%;
+    width: 29%;
+    margin: 20px;
+  }
+
+  #project3-info > .project-img {
+    height: 44%;
+    width: 45%;
+  }
+}
+
 @media (max-width:768px) {
   .thomas {
     margin: auto;
