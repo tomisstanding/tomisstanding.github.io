@@ -120,5 +120,35 @@ $(() => {
   .setClassToggle('.aboutme', 'fade-in')
   .addTo(controller);
 
+  // parallax effect
+  $('.parallax').each(function() {
+    const slideParallaxScence = new ScrollMagic.Scene({
+      triggerElement: this,
+      triggerHook: 1,
+      duration: '100%'
+    })
+    .setTween(TweenMax.from(this.children[1], 2, {y: '-50%', ease: Power0.easeNone}, 0))
+    .addTo(controller);
+  })
+
+  // Simon intro will slide up since there is not parallax effect here
+  $('.slide-up').each(function() {
+    const fadeContentIn = new ScrollMagic.Scene({
+      triggerElement: '#project2',
+      triggerHook: 0.7
+    })
+    .setClassToggle(this, 'fade-in')
+    .addTo(controller);
+  })
+
+  // loop from each project-info element and create a scene for each container
+  $('.project-info').each(function() {
+    const projectsFadeIn = new ScrollMagic.Scene({
+      triggerElement: this,
+      triggerHook: 0.7
+    })
+    .setClassToggle(this, 'fade-in')
+    .addTo(controller);
+  });
 
 });
