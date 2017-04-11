@@ -41,6 +41,7 @@ $(() => {
   const linkedIn = $('#linked-in');
   const scroll = $('#scroll-div');
   const scrollIcon = $('#scroll');
+  const arrow = $('#arrow');
 
   // Icons in header fade in one by one
   setTimeout(() => {
@@ -56,7 +57,7 @@ $(() => {
     scroll.addClass('animated fadeInUpScroll');
   }, 1700);
   setTimeout(() => {
-    scrollIcon.addClass('animated infinite wobble')
+    arrow.addClass('animated infinite bounce')
   }, 4000);
 
 // add animations to icons on mouseenter

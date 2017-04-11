@@ -26,11 +26,8 @@
 
 #arrow {
   padding-left: 10px;
-  -ms-transform: rotate(90deg); /* IE 9 */
-  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-  transform: rotate(90deg);
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 70px;
 }
 
 body {
@@ -355,11 +352,11 @@ header.slideIn {
   -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
   z-index: -1;
-  top: 10px;
+  top: 60px;
 }
 
 #scroll-div > p {
-  margin: 10px 50px 10px 50px;
+  margin: 10px 50px 10px 35px;
 }
 
 .slide-up {
