@@ -44,13 +44,13 @@ $(() => {
 
   // Icons in header fade in one by one
   setTimeout(() => {
-    email.addClass('animated2 fadeInUp');
+    linkedIn.addClass('animated2 fadeInUp');
   }, 1200);
   setTimeout(() => {
-    github.addClass('animated2 fadeInUp');
+    email.addClass('animated2 fadeInUp');
   }, 1400);
   setTimeout(() => {
-    linkedIn.addClass('animated2 fadeInUp');
+    github.addClass('animated2 fadeInUp');
   }, 1600);
   setTimeout(() => {
     scroll.addClass('animated fadeInUpScroll');
