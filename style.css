@@ -646,7 +646,7 @@ header.slideIn {
 
   .mobile-links > a {
     font-size: 25px;
-    border: 3px solid gray;
+    border: 1px solid gray;
     margin: 10px;
     padding: 2px 20px 4px 20px;
     text-decoration: none;
@@ -656,7 +656,7 @@ header.slideIn {
   }
 
   .mobile-links > a:hover {
-    background-color: gray;
+    background-color: rgb(225, 229, 237);
     color: white;
   }
 
@@ -681,8 +681,8 @@ header.slideIn {
   }
 
   #project3-info > .project-img {
-    height: 30%;
-    width: 70%;
+    height: 50%;
+    width: 65%;
     margin: 15px;
   }
 
@@ -690,7 +690,6 @@ header.slideIn {
     padding: 15px 30px 20px 30px;
     font-size: 19px;
   }
-
 
   #project2-info {
     flex-direction: column-reverse;
