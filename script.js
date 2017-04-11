@@ -40,7 +40,6 @@ $(() => {
   const email = $('#email-logo');
   const linkedIn = $('#linked-in');
   const scroll = $('#scroll-div');
-  const scrollIcon = $('#scroll');
   const arrow = $('#arrow');
 
   // Icons in header fade in one by one
