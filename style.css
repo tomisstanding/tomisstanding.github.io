@@ -394,20 +394,16 @@ header.slideIn {
 .thomas {
   margin: auto;
   position: absolute;
-  top: 50px; left: 0; bottom: 250px; right: 0;
+  top: 50px; left: 0; bottom: 250px; right: 650;
   width: 100%;
-
   display: flex;
   height: auto;
-
   color: #FAFAFA;
   text-transform: uppercase;
   text-align: center;
-
-  font-size: 8em;
+  font-size: 7.5em;
   font-family: 'Rock Salt', cursive;
   font-weight: 800;
-
   letter-spacing: -0.02em;
   line-height: 1.2em;
   background-size: contain;
@@ -455,6 +451,24 @@ header.slideIn {
     height: 44%;
     width: 45%;
   }
+
+  .thomas {
+    margin: auto;
+    position: absolute;
+    top: 50px; left: 0; bottom: 250px; right: 650;
+    width: 100%;
+    display: flex;
+    height: auto;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 6.5em;
+    font-family: 'Rock Salt', cursive;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
+    background-size: contain;
+  }
 }
 
 @media on screen and (max-width:768px) {
@@ -479,18 +493,14 @@ header.slideIn {
     position: absolute;
     top: 50px; left: 0; bottom: 250px; right: 150px;
     width: 100px;
-
     display: flex;
     height: auto;
-
     color: #FAFAFA;
     text-transform: uppercase;
     text-align: center;
-
-    font-size: 10vw;
+    font-size: 5em;
     font-family: 'Rock Salt', cursive;
     font-weight: 800;
-
     letter-spacing: -0.02em;
     line-height: 1.2em;
     background-size: contain;
@@ -546,6 +556,24 @@ header.slideIn {
   .technology {
     padding: 0 10px 0 10px;
   }
+
+  .thomas {
+    margin: auto;
+    position: absolute;
+    top: 150px; left: 0; bottom: 250px; right: 350;
+    width: 100%;
+    display: flex;
+    height: auto;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 4.5em;
+    font-family: 'Rock Salt', cursive;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
+    background-size: contain;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -563,6 +591,24 @@ header.slideIn {
 
   #project2 > .content-container > h1 {
     line-height: 1;
+  }
+
+  .thomas {
+    margin: auto;
+    position: absolute;
+    top: 150px; left: 0; bottom: 250px; right: 350;
+    width: 100%;
+    display: flex;
+    height: auto;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 4em;
+    font-family: 'Rock Salt', cursive;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
+    background-size: contain;
   }
 }
 
@@ -652,6 +698,24 @@ header.slideIn {
 
   .technology {
     margin-bottom: 30px;
+  }
+
+  .thomas {
+    margin: auto;
+    position: absolute;
+    top: 150px; left: 0; bottom: 250px; right: 350;
+    width: 100%;
+    display: flex;
+    height: auto;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3.5em;
+    font-family: 'Rock Salt', cursive;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
+    background-size: contain;
   }
 }
 
