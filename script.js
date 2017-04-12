@@ -62,7 +62,7 @@ $(() => {
 // add animations to icons on mouseenter
   email.on('mouseenter', function() {
     email.css({
-      'opacity': '0.6',
+      'opacity': '0.9',
       'transform': 'none'
     });
     email.removeClass('animated2 fadeInUp');
@@ -75,7 +75,7 @@ $(() => {
 
   github.on('mouseenter', function() {
     github.css({
-      'opacity': '0.6',
+      'opacity': '0.9',
       'transform': 'none'
     });
     github.removeClass('animated2 fadeInUp');
@@ -88,7 +88,7 @@ $(() => {
 
   linkedIn.on('mouseenter', function() {
     linkedIn.css({
-      'opacity': '0.6',
+      'opacity': '0.9',
       'transform': 'none'
     });
     linkedIn.removeClass('animated2 fadeInUp');
