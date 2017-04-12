@@ -466,7 +466,7 @@ header.slideIn {
   }
 }
 
-@media on screen and (max-width:768px) {
+@media screen and (max-width:768px) {
   .project-img {
     height: 30%;
     width: 30%;
@@ -502,7 +502,7 @@ header.slideIn {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .content-container > h1 {
     font-size: 65px;
   }
@@ -571,7 +571,7 @@ header.slideIn {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .content-container > p {
     padding: 30px 75px 0 75px;
   }
@@ -619,6 +619,7 @@ header.slideIn {
     justify-content: center;
     width: 90px;
     height: 70px;
+    margin: 0 auto;
   }
 
   .content-container > h1 {
@@ -734,6 +735,7 @@ header.slideIn {
     justify-content: center;
     width: 90px;
     height: 70px;
+    margin: 0 auto;
   }
 
   .content-container > h1 {
