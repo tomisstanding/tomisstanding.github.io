@@ -612,6 +612,13 @@ header.slideIn {
     padding: 0 20px;
   }
 
+  #arrow {
+    position: fixed;
+    width: 90px;
+    height: 70px;
+    margin: auto;
+  }
+
   .content-container > h1 {
     text-shadow: none;
   }
