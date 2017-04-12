@@ -31,11 +31,6 @@ $(() => {
     header[0].classList.add('slideIn');
   }, 1000);
 
-  // when header is clicked, page will scroll back to the top
-  header.click(() => {
-    $("html, body").animate({ scrollTop: 0 }, "slow");
-  });
-
   const github = $('#github-logo');
   const email = $('#email-logo');
   const linkedIn = $('#linked-in');
