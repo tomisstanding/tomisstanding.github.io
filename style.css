@@ -25,9 +25,9 @@
 }
 
 #arrow {
-  padding-left: 10px;
   width: 90px;
   height: 70px;
+  margin: 0 auto;
 }
 
 body {
