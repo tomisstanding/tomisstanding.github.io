@@ -692,7 +692,7 @@ header.slideIn {
   .thomas {
     margin: auto;
     position: absolute;
-    top: 150px; left: 0; bottom: 250px; right: 350;
+    top: 70px; left: 0; bottom: 250px; right: 350;
     width: 100%;
     display: flex;
     height: auto;
@@ -710,8 +710,8 @@ header.slideIn {
 
 @media all and (max-width: 320px) {
 
-  .animated.bounceInLeft {
-    font-size: 3em;
+  .land > h3 {
+    font-size: 11px;
   }
 
   .aboutme > p {
@@ -811,7 +811,7 @@ header.slideIn {
   .thomas {
     margin: auto;
     position: absolute;
-    top: 150px; left: 0; bottom: 250px; right: 350;
+    top: 70px; left: 0; bottom: 200px; right: 350;
     width: 100%;
     display: flex;
     height: auto;
