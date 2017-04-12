@@ -353,6 +353,16 @@ header.slideIn {
   transform: translateY(0);
 }
 
+.skills > img {
+  display: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
 .technology {
   display: flex;
   flex-direction: column;
@@ -535,6 +545,16 @@ header.slideIn {
     margin: 20px;
   }
 
+  .skills > img {
+    display: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    margin-top: 10px;
+    padding: 5px;
+  }
+
   .technology {
     padding: 0 10px 0 10px;
   }
@@ -573,6 +593,16 @@ header.slideIn {
 
   #project2 > .content-container > h1 {
     line-height: 1;
+  }
+
+  .skills > img {
+    display: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    margin-top: 10px;
+    padding: 5px;
   }
 
   .thomas {
@@ -688,6 +718,16 @@ header.slideIn {
 
   #project2-info {
     flex-direction: column-reverse;
+  }
+
+  .skills > img {
+    display: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-top: 10px;
+    padding: 5px;
   }
 
   .technology {
@@ -807,6 +847,16 @@ header.slideIn {
 
   #project2-info {
     flex-direction: column-reverse;
+  }
+
+  .skills > img {
+    display: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-top: 10px;
+    padding: 5px;
   }
 
   .technology {
