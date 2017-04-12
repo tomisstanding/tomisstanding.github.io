@@ -613,7 +613,9 @@ header.slideIn {
   }
 
   #arrow {
-    position: fixed;
+    text-align: center;
+    display: block;
+    align-items: center;
     width: 90px;
     height: 70px;
     margin: auto;
