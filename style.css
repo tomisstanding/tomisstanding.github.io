@@ -607,7 +607,7 @@ header.slideIn {
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media all and (max-width: 400px) {
   .aboutme > p {
     padding: 0 20px;
   }
@@ -712,6 +712,121 @@ header.slideIn {
     text-transform: uppercase;
     text-align: center;
     font-size: 3.5em;
+    font-family: 'Rock Salt', cursive;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
+    background-size: contain;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .aboutme > p {
+    padding: 0 20px;
+  }
+
+  #arrow {
+    text-align: center;
+    display: block;
+    align-items: center;
+    width: 90px;
+    height: 70px;
+    margin: auto;
+  }
+
+  .content-container > h1 {
+    text-shadow: none;
+  }
+
+  .content-container > h1 {
+    font-size: 50px;
+  }
+
+  .content-container > p {
+    padding: 15px 30px 20px 30px;
+    font-size: 19px;
+  }
+
+  .hidden-image {
+    display: flex;
+  }
+
+  .hidden-links {
+    display: none;
+  }
+
+  .mobile-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .mobile-links > a {
+    font-size: 25px;
+    border: 1px solid gray;
+    margin: 10px;
+    padding: 2px 20px 4px 20px;
+    text-decoration: none;
+    color: gray;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .mobile-links > a:hover {
+    background-color: rgb(225, 229, 237);
+    color: white;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .project-info {
+    flex-direction: column;
+    height: 700px;
+    padding: 60px 0;
+  }
+
+  #project3-info {
+    height: 500px;
+  }
+
+  .project-img {
+    height: 30%;
+    width: 70%;
+    margin: 15px;
+  }
+
+  #project3-info > .project-img {
+    height: 50%;
+    width: 65%;
+    margin: 15px;
+  }
+
+  #project3 > .content-container > p {
+    padding: 15px 30px 20px 30px;
+    font-size: 19px;
+  }
+
+  #project2-info {
+    flex-direction: column-reverse;
+  }
+
+  .technology {
+    margin-bottom: 30px;
+  }
+
+  .thomas {
+    margin: auto;
+    position: absolute;
+    top: 150px; left: 0; bottom: 250px; right: 350;
+    width: 100%;
+    display: flex;
+    height: auto;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3.3em;
     font-family: 'Rock Salt', cursive;
     font-weight: 800;
     letter-spacing: -0.02em;
