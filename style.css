@@ -709,6 +709,11 @@ header.slideIn {
 }
 
 @media all and (max-width: 320px) {
+
+  .animated.bounceInLeft {
+    font-size: 3em;
+  }
+
   .aboutme > p {
     padding: 0 20px;
   }
