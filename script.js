@@ -23,7 +23,6 @@ $(() => {
   // set landing page to height of window
   const windowHeight = $(window).height();
   $('.land').css('height', windowHeight - 50);
-  $('#scroll-div').css('padding-top', windowHeight - 140);
 
   // after name and title come in, header will slide in from top
   const header = $('.header');
