@@ -825,7 +825,8 @@ header.slideIn {
   }
 
   .land > h3 {
-    font-size: 9px;
+    font-size: 9px !important;
+    letter-spacing: 2px !important;
   }
 
   .mobile-links {
