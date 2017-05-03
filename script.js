@@ -24,9 +24,9 @@ $(() => {
   $('.land').css('height', windowHeight - 50);
 
   // after name and title come in, header will slide in from top
-  const header = $('.header');
+  let header = $('.fsd');
   setTimeout(() => {
-    header[0].classList.add('slideIn');
+    header.addClass('animated flip');
   }, 1000);
 
   const github = $('#github-logo');
@@ -38,19 +38,19 @@ $(() => {
   // Icons in header fade in one by one
   setTimeout(() => {
     linkedIn.addClass('animated2 fadeInUp');
-  }, 1200);
+  }, 1500);
   setTimeout(() => {
     email.addClass('animated2 fadeInUp');
-  }, 1400);
-  setTimeout(() => {
-    github.addClass('animated2 fadeInUp');
-  }, 1600);
-  setTimeout(() => {
-    scroll.addClass('animated fadeInUpScroll');
   }, 1700);
   setTimeout(() => {
+    github.addClass('animated2 fadeInUp');
+  }, 1900);
+  setTimeout(() => {
+    scroll.addClass('animated fadeInUpScroll');
+  }, 2100);
+  setTimeout(() => {
     arrow.addClass('animated infinite bounce')
-  }, 4000);
+  }, 3000);
 
 // add animations to icons on mouseenter
   email.on('mouseenter', function() {
