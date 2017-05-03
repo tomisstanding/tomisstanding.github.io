@@ -1,5 +1,4 @@
 'use strict';
-console.log('JS connected');
 
 // config new shine object for name in header section
 var config = new shinejs.Config({
@@ -125,10 +124,10 @@ $(() => {
     .addTo(controller);
   })
 
-  // Simon intro will slide up since there is not parallax effect here
+  // Upick intro will slide up since there is not parallax effect here
   $('.slide-up').each(function() {
     const fadeContentIn = new ScrollMagic.Scene({
-      triggerElement: '#project2',
+      triggerElement: '#project3',
       triggerHook: 0.7
     })
     .setClassToggle(this, 'fade-in')
