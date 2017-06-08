@@ -774,6 +774,10 @@ header.slideIn {
     flex-direction: column-reverse;
   }
 
+  #rhlw {
+    width: 200px;
+  }
+
   .skills > img {
     display: relative;
     flex-direction: row;
