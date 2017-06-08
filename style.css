@@ -193,6 +193,12 @@ header.slideIn {
   filter: blur(5px);
 }
 
+#js {
+  height: auto;
+  max-width: 900px;
+  z-index: 1;
+}
+
 /* Parallax background */
 .land {
   display: flex;
@@ -342,6 +348,12 @@ header.slideIn {
   transform: translateY(0);
 }
 
+#rhlw {
+  height: auto;
+  width: 500px;
+  z-index: 1;
+}
+
 .slide-up {
   opacity: 0;
   transform: translateY(50px);
@@ -425,6 +437,10 @@ header.slideIn {
     padding: 50px 75px 0 75px;
   }
 
+  #js {
+    width: 600px;
+  }
+
   #project3 > .content-container > p {
     padding: 50px 75px 0 75px;
   }
@@ -442,6 +458,10 @@ header.slideIn {
   #project3-info > .project-img {
     height: 44%;
     width: 45%;
+  }
+
+  #rhlw {
+    width: 500px;
   }
 
   .thomas {
@@ -539,6 +559,10 @@ header.slideIn {
     color: rgb(225, 229, 237);
   }
 
+  #js {
+    width: 400px;
+  }
+
   .overlay > p, .overlay > a {
     display: none;
   }
@@ -553,6 +577,10 @@ header.slideIn {
     height: 36%;
     width: 52%;
     margin: 20px;
+  }
+
+  #rhlw {
+    width: 400px;
   }
 
   .skills > img {
@@ -829,6 +857,10 @@ header.slideIn {
     filter: blur(5px);
   }
 
+  #js {
+    width: 320px
+  }
+
   .land > h3 {
     font-size: 9px;
     letter-spacing: 2px;
@@ -889,6 +921,10 @@ header.slideIn {
 
   #project2-info {
     flex-direction: column-reverse;
+  }
+
+  #rhlw {
+    width: 320px;
   }
 
   .skills > img {

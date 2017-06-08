@@ -1,6 +1,4 @@
 'use strict';
-<script>
-$(document).ready(function() {
 
   // config new shine object for name in header section
   var config = new shinejs.Config({
@@ -147,6 +145,3 @@ $(document).ready(function() {
     });
 
   });
-
-});
-</script>
