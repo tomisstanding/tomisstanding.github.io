@@ -400,7 +400,7 @@ header.slideIn {
   position: absolute;
   top: 50px; left: 0; bottom: 250px; right: 650;
   width: 100%;
-  max-width: 1300px;
+  max-width: 100%;
   display: flex;
   height: auto;
   color: #FAFAFA;
