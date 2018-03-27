@@ -1,10 +1,10 @@
 'use strict';
 
   // Wait for window load
-  $(window).load(function() {
-     // Animate loader off screen
-    $("#loader").fadeOut("slow");;
-  });
+  // $(window).load(function() {
+  //    // Animate loader off screen
+  //   $("#loader").fadeOut();;
+  // });
   // Preloader
   (function(){
     function id(v){ return document.getElementById(v); }
