@@ -529,6 +529,11 @@ header.slideIn {
 }
 
 @media screen and (max-width:768px) {
+
+  #loader {
+    margin-top: 15px;
+  }
+
   .project-img {
     height: 30%;
     width: 30%;
