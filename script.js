@@ -17,7 +17,7 @@
         c += 1;
         var perc = ((100/tot*c) << 0) +"%";
         prog.style.width = perc;
-        stat.innerHTML = "Loading "+ perc;
+        stat.innerHTML = "Preparing for blast off...";
         if(c===tot) return doneLoading();
       }
       function doneLoading(){
@@ -158,7 +158,7 @@
       })
       .setTween(TweenMax.from(this.children[1], 2, {y: '-50%', ease: Power0.easeNone}, 0))
       .addTo(controller);
-    })
+    });
 
     // Upick intro will slide up since there is not parallax effect here
     $('.slide-up').each(function() {
