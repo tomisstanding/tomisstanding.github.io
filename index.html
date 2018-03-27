@@ -15,6 +15,45 @@
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script>
+  // Preloader
+  (function(){
+    function id(v){ return document.getElementById(v); }
+    function loadbar() {
+      var ovrl = id("overlay"),
+          prog = id("progress"),
+          stat = id("progstat"),
+          loader = id("loader"),
+          img = document.images,
+          c = 0,
+          tot = img.length;
+      if(tot == 0) return doneLoading();
+
+      function imgLoaded(){
+        c += 1;
+        var perc = ((100/tot*c) << 0) +"%";
+        prog.style.width = perc;
+        stat.innerHTML = "Loading "+ perc;
+        if(c===tot) return doneLoading();
+      }
+      function doneLoading(){
+        ovrl.style.opacity = 0;
+        setTimeout(function(){
+          ovrl.style.display = "none";
+        }, 1200);
+      }
+      for(var i=0; i<tot; i++) {
+        var tImg     = new Image();
+        tImg.onload  = imgLoaded;
+        tImg.onerror = imgLoaded;
+        tImg.src     = img[i].src;
+      }
+    }
+    document.addEventListener('DOMContentLoaded', loadbar, false);
+  }());
+  </script>
 </head>
 
 <body>
@@ -337,9 +376,6 @@
     </a>
   </footer>
 <!-- End Footer -->
-
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
-  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
