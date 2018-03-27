@@ -1,6 +1,5 @@
 'use strict';
 
-
   // Preloader
   (function(){
     function id(v){ return document.getElementById(v); }
