@@ -1,12 +1,7 @@
 'use strict';
 
-  // Wait for window load
-  // $(window).load(function() {
-  //    // Animate loader off screen
-  //   $("#loader").fadeOut();;
-  // });
   // Preloader
-  (function(){
+  ;(function(){
     function id(v){ return document.getElementById(v); }
     function loadbar() {
       var ovrl = id("overlay"),
@@ -40,7 +35,6 @@
     }
     document.addEventListener('DOMContentLoaded', loadbar, false);
   }());
-
 
   // config new shine object for name in header section
   var config = new shinejs.Config({
