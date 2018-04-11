@@ -339,6 +339,8 @@ header.slideIn {
   text-align: center;
   position: relative;
   overflow: hidden;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .project-info {
@@ -362,6 +364,7 @@ header.slideIn {
   margin: 30px;
   overflow: hidden;
   position: relative;
+  max-width: 400px;
 }
 
 #project3-info > .project-img {
