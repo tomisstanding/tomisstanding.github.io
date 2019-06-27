@@ -1,4 +1,4 @@
-'use strict';
+
 
   // Preloader
   ;(function(){
@@ -53,6 +53,9 @@
 
   window.addEventListener('mousemove', handleMouseMove, false);
   // end shine object
+
+
+  $(document).ready(function() {
 
   $(() => {
     // set landing page to height of window
@@ -181,3 +184,4 @@
     });
 
   });
+});
