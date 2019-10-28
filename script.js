@@ -1,41 +1,5 @@
 
 
-  // Preloader
-  ;(function(){
-    function id(v){ return document.getElementById(v); }
-    function loadbar() {
-      var ovrl = id("overlay"),
-          prog = id("progress"),
-          stat = id("progstat"),
-          loader = id("loader"),
-          img = document.images,
-          c = 0,
-          tot = img.length;
-      if(tot == 0) return doneLoading();
-
-      function imgLoaded(){
-        c += 1;
-        var perc = ((100/tot*c) << 0) +"%";
-        prog.style.width = perc;
-        stat.innerHTML = "Preparing for blast off...";
-        if(c===tot) return doneLoading();
-      }
-      function doneLoading(){
-        ovrl.style.opacity = 0;
-        setTimeout(function(){
-          ovrl.style.display = "none";
-        }, 1200);
-      }
-      for(var i=0; i<tot; i++) {
-        var tImg     = new Image();
-        tImg.onload  = imgLoaded;
-        tImg.onerror = imgLoaded;
-        tImg.src     = img[i].src;
-      }
-    }
-    document.addEventListener('DOMContentLoaded', loadbar, false);
-  }());
-
   // config new shine object for name in header section
   var config = new shinejs.Config({
     numSteps: 8,
@@ -146,8 +110,8 @@
     // build a new scene to fade in about me
     const aboutMeFade = new ScrollMagic.Scene({
       triggerElement: '.aboutme p',
-      duration: '60%',
-      triggerHook: 0.8
+      duration: '80%',
+      triggerHook: 0.2
     })
     .setClassToggle('.aboutme', 'fade-in')
     .addTo(controller);
