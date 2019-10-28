@@ -7,14 +7,14 @@
   display: flex;
 }
 
-#loader {
+/*#loader {
   margin-top: 150px;
   position: relative;
   flex:1;
   align-items: center;
   align-self: center;
   align-content: center;
-}
+}*/
 
 #overlay{
   position:fixed;
@@ -453,7 +453,7 @@ header.slideIn {
   font-size: 7.5em;
   font-family: 'Rock Salt', cursive;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  /*letter-spacing: -0.02em;*/
   line-height: 1.2em;
   background-size: contain;
 }
@@ -526,7 +526,7 @@ header.slideIn {
     font-size: 6.5em;
     font-family: 'Rock Salt', cursive;
     font-weight: 800;
-    letter-spacing: -0.02em;
+    /*letter-spacing: -0.02em;*/
     line-height: 1.2em;
     background-size: contain;
   }
@@ -577,7 +577,7 @@ header.slideIn {
     font-size: 5em;
     font-family: 'Rock Salt', cursive;
     font-weight: 800;
-    letter-spacing: -0.02em;
+    /*letter-spacing: -0.02em;*/
     line-height: 1.2em;
     background-size: contain;
   }
@@ -668,7 +668,7 @@ header.slideIn {
     font-size: 4.5em;
     font-family: 'Rock Salt', cursive;
     font-weight: 800;
-    letter-spacing: -0.02em;
+    /*letter-spacing: -0.02em;*/
     line-height: 1.2em;
     background-size: contain;
   }
@@ -714,7 +714,7 @@ header.slideIn {
     font-size: 3.5em;
     font-family: 'Rock Salt', cursive;
     font-weight: 800;
-    letter-spacing: -0.02em;
+    /*letter-spacing: -0.02em;*/
     line-height: 1.2em;
     background-size: contain;
   }
@@ -863,7 +863,7 @@ header.slideIn {
     font-size: 3.2em;
     font-family: 'Rock Salt', cursive;
     font-weight: 800;
-    letter-spacing: -0.02em;
+    /*letter-spacing: -0.02em;*/
     line-height: 1.2em;
     background-size: contain;
   }
@@ -1016,7 +1016,7 @@ header.slideIn {
     font-size: 3em;
     font-family: 'Rock Salt', cursive;
     font-weight: 800;
-    letter-spacing: -0.02em;
+    /*letter-spacing: -0.02em;*/
     line-height: 1.2em;
     background-size: contain;
   }
