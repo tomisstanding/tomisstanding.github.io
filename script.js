@@ -2,7 +2,7 @@
 
   // config new shine object for name in header section
   var config = new shinejs.Config({
-    numSteps: 8,
+    numSteps: 2,
     opacity: 5,
     shadowRGB: new shinejs.Color(220, 222, 226)
   });
@@ -102,7 +102,7 @@
     // build a new scence to fade out landing info
     const landingFadeOut =  new ScrollMagic.Scene({
       triggerElement: '.icons',
-      triggerHook: 0.2
+      triggerHook: 0.1
     })
     .setClassToggle('.land', 'fade-out')
     .addTo(controller);
@@ -111,41 +111,41 @@
     const aboutMeFade = new ScrollMagic.Scene({
       triggerElement: '.aboutme p',
       duration: '80%',
-      triggerHook: 0.2
+      triggerHook: 0.1
     })
     .setClassToggle('.aboutme', 'fade-in')
     .addTo(controller);
 
     // parallax effect
-    $('.parallax').each(function() {
-      const slideParallaxScence = new ScrollMagic.Scene({
-        triggerElement: this,
-        triggerHook: 1,
-        duration: '100%'
-      })
-      .setTween(TweenMax.from(this.children[1], 2, {y: '-50%', ease: Power0.easeNone}, 0))
-      .addTo(controller);
-    });
+    // $('.parallax').each(function() {
+    //   const slideParallaxScence = new ScrollMagic.Scene({
+    //     triggerElement: this,
+    //     triggerHook: 1,
+    //     duration: '100%'
+    //   })
+    //   .setTween(TweenMax.from(this.children[1], 2, {y: '-50%', ease: Power0.easeNone}, 0))
+    //   .addTo(controller);
+    // });
 
     // Upick intro will slide up since there is not parallax effect here
-    $('.slide-up').each(function() {
-      const fadeContentIn = new ScrollMagic.Scene({
-        triggerElement: '#project3',
-        triggerHook: 0.7
-      })
-      .setClassToggle(this, 'fade-in')
-      .addTo(controller);
-    })
+    // $('.slide-up').each(function() {
+    //   const fadeContentIn = new ScrollMagic.Scene({
+    //     triggerElement: '#project3',
+    //     triggerHook: 0.7
+    //   })
+    //   .setClassToggle(this, 'fade-in')
+    //   .addTo(controller);
+    // })
 
     // loop from each project-info element and create a scene for each container
-    $('.project-info').each(function() {
-      const projectsFadeIn = new ScrollMagic.Scene({
-        triggerElement: this,
-        triggerHook: 0.7
-      })
-      .setClassToggle(this, 'fade-in')
-      .addTo(controller);
-    });
+    // $('.project-info').each(function() {
+    //   const projectsFadeIn = new ScrollMagic.Scene({
+    //     triggerElement: this,
+    //     triggerHook: 0.7
+    //   })
+    //   .setClassToggle(this, 'fade-in')
+    //   .addTo(controller);
+    // });
 
   });
 });
