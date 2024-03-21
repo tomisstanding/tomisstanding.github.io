@@ -259,6 +259,8 @@ header.slideIn {
   font-size: 15px;
   color: gray;
   letter-spacing: 5px;
+  text-align:center;
+  text-wrap:wrap;
 }
 
 .mobile-links {
