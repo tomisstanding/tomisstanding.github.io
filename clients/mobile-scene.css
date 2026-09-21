@@ -1,0 +1,13 @@
+/* On phones the animals keep their real locations in the landscape, rather than becoming a grid. */
+@media(max-width:680px){
+  html,body{height:100%;min-height:100%;overflow:hidden}body{min-height:100svh}
+  main{width:100%;min-height:100svh}.intro{padding:18px;z-index:10}.intro-copy{padding:14px 16px 16px}.intro h1{font-size:clamp(42px,12vw,56px);letter-spacing:-3.7px}.eyebrow{font-size:7px}.field-heading{display:none!important}
+  .animal-stage{position:fixed;inset:0;min-height:100svh;background:url('wilderness-background.png') center/cover no-repeat;border:0;box-shadow:none;z-index:1}
+  .animal-field{position:absolute;inset:0;display:block;min-height:0;padding:0;background:none;border:0}
+  .animal,.animal:hover,.animal:focus-visible,.animal[aria-pressed='true']{position:absolute;left:var(--x);top:var(--y);width:var(--animal-size);height:calc(var(--animal-size) + 30px);transform:translate(-50%,-50%) scale(var(--scale));animation:none!important}
+  .animal-detail{position:fixed;z-index:11;left:16px;right:16px;top:auto;bottom:84px;width:auto;max-height:min(232px,calc(100svh - 240px));margin:0;overflow-y:auto;transform:none!important;background:#fffdf7f7}
+  .field-footer{position:fixed;z-index:12;left:0;right:0;bottom:0;width:auto;height:68px;padding:0 16px;background:#fffffff0;border-top:1px solid #d7d9d3;box-shadow:0 -8px 22px #1c241210}
+  .animal[data-id='create']{--x:17%!important;--y:64%!important;--animal-size:78px!important}.animal[data-id='olyra']{--x:43%!important;--y:62%!important;--animal-size:72px!important}.animal[data-id='kevins']{--x:69%!important;--y:65%!important;--animal-size:76px!important}.animal[data-id='ctwf']{--x:10%!important;--y:24%!important;--animal-size:43px!important}.animal[data-id='koia']{--x:84%!important;--y:59%!important;--animal-size:90px!important}
+  .animal[data-id='gigit']{--x:56%!important;--y:48%!important;--animal-size:58px!important}.animal[data-id='jpress']{--x:24%!important;--y:49%!important;--animal-size:42px!important}.animal[data-id='unbound']{--x:44%!important;--y:77%!important;--animal-size:64px!important}.animal[data-id='somera']{--x:63%!important;--y:45%!important;--animal-size:43px!important}.animal[data-id='ohana-realty']{--x:77%!important;--y:78%!important;--animal-size:80px!important}
+  .animal[data-id='lym']{--x:88%!important;--y:20%!important;--animal-size:50px!important}.animal[data-id='oceanfoam']{--x:14%!important;--y:79%!important;--animal-size:68px!important}.animal[data-id='tare']{--x:30%!important;--y:82%!important;--animal-size:90px!important}.animal[data-id='richwife']{--x:54%!important;--y:84%!important;--animal-size:78px!important}.animal[data-id='served']{--x:76%!important;--y:87%!important;--animal-size:94px!important}
+}
