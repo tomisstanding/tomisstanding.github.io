@@ -31,3 +31,13 @@ Additional official logo sources:
 - somera.svg: https://someraroadinc.com/wp-content/uploads/2025/08/logo-dark.svg
 - ohana-realty.svg: https://ohanarealty.com/wp-content/themes/ohana/images/logo.svg
 - gigit.svg: https://gigit.ai/assets/gigit-logo-CEt0Py0p.svg
+
+## Additional clients
+
+Love Your Melon, Oceanfoam, Tare Market, Rich Wife, and Served were added at Thomas’s request. Company descriptions were checked against their official websites. Their freelance contribution summaries are pending; do not substitute prior employment experience for freelance scope.
+
+- lym.png: https://loveyourmelon.com/cdn/shop/files/Primary_Indigo.png?height=108&v=1754939658
+- oceanfoam.png: https://oceanfoam.com/cdn/shop/files/OceanFoam_WordMark_Black_6e4c0c7d-4b85-45c3-8bcb-b155fffd61a7.png?height=123&v=1695391489
+- tare.png: https://www.thetaremarket.com/cdn/shop/files/tare_500_black-transparent_110218.png?v=1670256885
+- richwife.png: https://richwife.com/cdn/shop/files/RICHWIFE-Wordmark-Logo-Black_1.png?v=1714172568&width=370
+- served.jpg: https://shopserved.com/cdn/shop/files/Red_logo_with_TM_inside_box_637a1e50-d321-4bfb-9a21-832cb1bfac60.jpg?v=1682991093&width=280
