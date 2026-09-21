@@ -17,9 +17,9 @@ const clients = [
 ];
 
 const animals = [
-  ['create.png','12%','20%',1.08,'4.8s','-.5s'],['olyra.png','31%','16%',.98,'5.4s','-2.4s'],['kevins.png','53%','18%',1.02,'4.5s','-1s'],['ctwf.png','73%','15%',.95,'5.7s','-3.1s'],['koia.png','88%','29%',1.05,'4.9s','-1.9s'],
-  ['gigit.png','17%','43%',.94,'5.2s','-2.8s'],['jpress.png','38%','40%',.99,'4.6s','-1.2s'],['unbound.png','59%','42%',.92,'5.6s','-3.4s'],['somera.png','80%','44%',1.08,'4.7s','-.8s'],['ohana-realty.png','9%','68%',.93,'5.1s','-1.7s'],
-  ['lym.png','28%','68%',1.04,'4.8s','-3s'],['oceanfoam.png','49%','67%',.97,'5.3s','-2.1s'],['tare.png','48%','83%',.91,'4.5s','-1.4s'],['richwife.png','18%','83%',1.05,'5.8s','-3.5s'],['served.png','66%','27%',.93,'4.9s','-.4s']
+  ['create.png','11%','25%',1.08,'16s','-.5s'],['olyra.png','26%','20%',.98,'19s','-2.4s'],['kevins.png','44%','25%',1.02,'17s','-1s'],['ctwf.png','58%','18%',.95,'21s','-3.1s'],['koia.png','83%','21%',1.05,'18s','-1.9s'],
+  ['gigit.png','14%','50%',.94,'20s','-2.8s'],['jpress.png','32%','48%',.99,'17s','-1.2s'],['unbound.png','48%','51%',.92,'22s','-3.4s'],['somera.png','60%','43%',1.08,'18s','-.8s'],['ohana-realty.png','10%','73%',.93,'20s','-1.7s'],
+  ['lym.png','27%','74%',1.04,'17s','-3s'],['oceanfoam.png','45%','72%',.97,'21s','-2.1s'],['tare.png','45%','84%',.91,'18s','-1.4s'],['richwife.png','29%','84%',1.05,'22s','-3.5s'],['served.png','74%','34%',.93,'19s','-.4s']
 ];
 
 const field = document.querySelector('#animal-field');
@@ -34,6 +34,7 @@ clients.forEach((client,index) => {
   const [art,x,y,scale,duration,delay] = animals[index];
   const button = document.createElement('button');
   button.type = 'button'; button.className = 'animal';
+  button.dataset.route = index % 5;
   button.setAttribute('aria-label',`Explore ${client.name}`); button.setAttribute('aria-controls','client-name');
   button.style.setProperty('--x',x); button.style.setProperty('--y',y); button.style.setProperty('--scale',scale); button.style.setProperty('--duration',duration); button.style.setProperty('--delay',delay);
   button.innerHTML = `<span class="animal-shadow" aria-hidden="true"></span><img class="animal-face" src="animals/${art}" alt=""><span class="animal-tag" aria-hidden="true">${client.name}</span>`;
