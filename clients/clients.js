@@ -17,9 +17,9 @@ const clients = [
 ];
 
 const animals = [
-  ['create.png','10%','48%',1.04],['olyra.png','23%','42%',.95],['kevins.png','37%','45%',.98],['ctwf.png','8%','20%',.82],['koia.png','55%','44%',1],
-  ['gigit.png','50%','60%',.92],['jpress.png','9%','64%',.94],['unbound.png','23%','58%',.9],['somera.png','38%','61%',1.03],['ohana-realty.png','66%','60%',.91],
-  ['lym.png','86%','16%',.88],['oceanfoam.png','18%','76%',.94],['tare.png','33%','75%',.88],['richwife.png','47%','76%',1],['served.png','61%','76%',.9]
+  ['create.png','13%','67%',1,'130px'],['olyra.png','30%','61%',1,'114px'],['kevins.png','45%','64%',1,'124px'],['ctwf.png','9%','23%',1,'62px'],['koia.png','64%','57%',1,'155px'],
+  ['create.png','53%','48%',1,'88px'],['jpress.png','18%','55%',1,'70px'],['unbound.png','27%','75%',1,'108px'],['somera.png','41%','46%',1,'72px'],['ohana-realty.png','74%','71%',1,'135px'],
+  ['lym.png','83%','18%',1,'78px'],['oceanfoam.png','22%','40%',1,'105px'],['tare.png','36%','78%',1,'148px'],['richwife.png','53%','78%',1,'126px'],['served.png','66%','84%',1,'164px']
 ];
 
 const field = document.querySelector('#animal-field');
@@ -30,12 +30,12 @@ let activeIndex = 0;
 const pad = number => String(number).padStart(2, '0');
 
 clients.forEach((client,index) => {
-  const [art,x,y,scale] = animals[index];
+  const [art,x,y,scale,size] = animals[index];
   const button = document.createElement('button');
   button.type = 'button'; button.className = 'animal';
   button.dataset.id = client.id;
   button.setAttribute('aria-label',`Explore ${client.name}`); button.setAttribute('aria-controls','client-name');
-  button.style.setProperty('--x',x); button.style.setProperty('--y',y); button.style.setProperty('--scale',scale);
+  button.style.setProperty('--x',x); button.style.setProperty('--y',y); button.style.setProperty('--scale',scale); button.style.setProperty('--animal-size',size);
   button.innerHTML = `<span class="animal-shadow" aria-hidden="true"></span><img class="animal-face" src="animals/${art}" alt=""><span class="animal-tag" aria-hidden="true">${client.name}</span>`;
   button.addEventListener('pointerenter',() => { if (finePointer.matches) selectClient(index,true); });
   button.addEventListener('focus',() => selectClient(index,true)); button.addEventListener('click',() => selectClient(index,true));
