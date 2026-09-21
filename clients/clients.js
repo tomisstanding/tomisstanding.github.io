@@ -17,9 +17,9 @@ const clients = [
 ];
 
 const animals = [
-  ['🐆','12%','20%',1.08,'4.8s','-.5s'],['🦊','31%','16%',.98,'5.4s','-2.4s'],['🦦','53%','18%',1.02,'4.5s','-1s'],['🐇','73%','15%',.95,'5.7s','-3.1s'],['🦜','88%','29%',1.05,'4.9s','-1.9s'],
-  ['🦎','17%','43%',.94,'5.2s','-2.8s'],['🦢','38%','40%',.99,'4.6s','-1.2s'],['🐿️','59%','42%',.92,'5.6s','-3.4s'],['🦬','80%','44%',1.08,'4.7s','-.8s'],['🐢','9%','68%',.93,'5.1s','-1.7s'],
-  ['🐻','28%','68%',1.04,'4.8s','-3s'],['🐬','49%','67%',.97,'5.3s','-2.1s'],['🦔','48%','83%',.91,'4.5s','-1.4s'],['🐩','18%','83%',1.05,'5.8s','-3.5s'],['🦞','66%','27%',.93,'4.9s','-.4s']
+  ['create.jpg','12%','20%',1.08,'4.8s','-.5s'],['olyra.jpg','31%','16%',.98,'5.4s','-2.4s'],['kevins.jpg','53%','18%',1.02,'4.5s','-1s'],['ctwf.jpg','73%','15%',.95,'5.7s','-3.1s'],['koia.jpg','88%','29%',1.05,'4.9s','-1.9s'],
+  ['gigit.jpg','17%','43%',.94,'5.2s','-2.8s'],['jpress.jpg','38%','40%',.99,'4.6s','-1.2s'],['unbound.jpg','59%','42%',.92,'5.6s','-3.4s'],['somera.jpg','80%','44%',1.08,'4.7s','-.8s'],['ohana-realty.jpg','9%','68%',.93,'5.1s','-1.7s'],
+  ['lym.jpg','28%','68%',1.04,'4.8s','-3s'],['oceanfoam.jpg','49%','67%',.97,'5.3s','-2.1s'],['tare.jpg','48%','83%',.91,'4.5s','-1.4s'],['richwife.jpg','18%','83%',1.05,'5.8s','-3.5s'],['served.jpg','66%','27%',.93,'4.9s','-.4s']
 ];
 
 const field = document.querySelector('#animal-field');
@@ -31,12 +31,12 @@ let paused = reduceMotion.matches;
 const pad = number => String(number).padStart(2, '0');
 
 clients.forEach((client,index) => {
-  const [face,x,y,scale,duration,delay] = animals[index];
+  const [art,x,y,scale,duration,delay] = animals[index];
   const button = document.createElement('button');
   button.type = 'button'; button.className = 'animal';
   button.setAttribute('aria-label',`Explore ${client.name}`); button.setAttribute('aria-controls','client-name');
   button.style.setProperty('--x',x); button.style.setProperty('--y',y); button.style.setProperty('--scale',scale); button.style.setProperty('--duration',duration); button.style.setProperty('--delay',delay);
-  button.innerHTML = `<span class="animal-shadow" aria-hidden="true"></span><span class="animal-face" aria-hidden="true">${face}</span><span class="animal-tag" aria-hidden="true">${client.name}</span>`;
+  button.innerHTML = `<span class="animal-shadow" aria-hidden="true"></span><img class="animal-face" src="animals/${art}" alt=""><span class="animal-tag" aria-hidden="true">${client.name}</span>`;
   button.addEventListener('pointerenter',() => { if (finePointer.matches) selectClient(index); });
   button.addEventListener('focus',() => selectClient(index)); button.addEventListener('click',() => selectClient(index));
   button.addEventListener('keydown',event => {
