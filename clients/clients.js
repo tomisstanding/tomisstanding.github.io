@@ -37,7 +37,7 @@ clients.forEach((client,index) => {
   button.dataset.id = client.id;
   button.setAttribute('aria-label',`Explore ${client.name}`); button.setAttribute('aria-controls','client-name');
   button.style.setProperty('--x',x); button.style.setProperty('--y',y); button.style.setProperty('--scale',scale); button.style.setProperty('--animal-size',size);
-  button.innerHTML = `<span class="animal-shadow" aria-hidden="true"></span><img class="animal-face" src="animals/${art}" alt=""><span class="animal-tag" aria-hidden="true">${client.name}</span>`;
+  button.innerHTML = `<span class="animal-shadow" aria-hidden="true"></span><span class="animal-halo" aria-hidden="true"></span><img class="animal-face" src="animals/${art}" alt=""><span class="animal-tag" aria-hidden="true">${client.name}</span>`;
   button.addEventListener('pointerenter',() => { if (finePointer.matches) selectClient(index,true); });
   button.addEventListener('focus',() => selectClient(index,true)); button.addEventListener('click',() => selectClient(index,true));
   button.addEventListener('keydown',event => {
