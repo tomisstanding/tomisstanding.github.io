@@ -18,8 +18,8 @@ const clients = [
 
 const animals = [
   ['create.png','10%','48%',1.04],['olyra.png','23%','42%',.95],['kevins.png','37%','45%',.98],['ctwf.png','8%','20%',.82],['koia.png','55%','44%',1],
-  ['gigit.png','50%','60%',.92],['jpress.png','9%','64%',.94],['unbound.png','23%','58%',.9],['somera.png','38%','61%',1.03],['ohana-realty.png','57%','61%',.91],
-  ['lym.png','78%','19%',.88],['oceanfoam.png','18%','76%',.94],['tare.png','33%','75%',.88],['richwife.png','47%','76%',1],['served.png','61%','76%',.9]
+  ['gigit.png','50%','60%',.92],['jpress.png','9%','64%',.94],['unbound.png','23%','58%',.9],['somera.png','38%','61%',1.03],['ohana-realty.png','66%','60%',.91],
+  ['lym.png','86%','16%',.88],['oceanfoam.png','18%','76%',.94],['tare.png','33%','75%',.88],['richwife.png','47%','76%',1],['served.png','61%','76%',.9]
 ];
 
 const field = document.querySelector('#animal-field');
