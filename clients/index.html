@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A few of the brands I help build, improve, and grow. Explore Thomas Standing’s freelance work in ecommerce and web development.">
-  <meta name="theme-color" content="#f5f4ee">
+  <meta name="theme-color" content="#eff2df">
   <title>Clients & Collaborations | Thomas Standing</title>
   <link rel="icon" href="../images/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="clients.css">
   <script src="clients.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#animal-field">Skip to clients</a>
   <header class="site-header">
     <a class="wordmark" href="../">Thomas Standing<span class="brand-dot">.</span></a>
     <nav aria-label="Main navigation">
@@ -25,66 +25,29 @@
   </header>
   <main id="main">
     <section class="intro" aria-labelledby="page-title">
-      <div class="eyebrow"><span class="small-star" aria-hidden="true">✳</span> INDEPENDENT WORK. SHARED AMBITION.</div>
+      <p class="eyebrow"><span aria-hidden="true">✳</span> 15 BRANDS. ONE GOOD BUNCH.</p>
       <div class="intro-row">
-        <h1 id="page-title">Good company.<br><span>Better experiences.</span></h1>
-        <p class="intro-copy">I partner with brands to build better websites, make shopping easier, and turn good ideas into things that work.</p>
+        <h1 id="page-title">The company<br><span>I keep.</span></h1>
+        <p>Independent work gets better with good partners. Meet the brands I help build, improve, and grow.</p>
       </div>
     </section>
-
-    <section class="experience" aria-label="Explore freelance clients">
-      <div class="orbit-column">
-        <div class="wheel-pagination" aria-label="Browse client groups">
-          <button id="previous-group" type="button" aria-label="Previous group of clients">←</button>
-          <span id="wheel-range" aria-live="polite" aria-atomic="true">01–05 OF 15</span>
-          <button id="next-group" type="button" aria-label="Next group of clients">More clients <span aria-hidden="true">→</span></button>
-        </div>
-        <div class="orbit" role="group" aria-label="Client logo wheel" aria-describedby="wheel-hint">
-          <div class="orbit-ring" aria-hidden="true"></div>
-          <div class="orbit-ring inner" aria-hidden="true"></div>
-          <div class="axis axis-x" aria-hidden="true"></div>
-          <div class="axis axis-y" aria-hidden="true"></div>
-          <div class="orbit-center" aria-hidden="true">
-            <svg class="center-mark" viewBox="0 0 80 80" fill="none"><path d="M40 3V77M3 40H77M14 14L66 66M14 66L66 14" stroke="currentColor" stroke-width="7"/></svg>
-            <span>Built together.</span>
-            <span class="center-caption">A FEW GOOD PARTNERS</span>
-          </div>
-          <div id="client-logos"></div>
-        </div>
-        <div class="orbit-controls">
-          <p id="wheel-hint">Hover or tap a logo to explore.</p>
-          <button id="motion-toggle" type="button" aria-pressed="false"><span id="motion-icon" aria-hidden="true">Ⅱ</span> <span id="motion-label">Pause rotation</span></button>
-        </div>
-      </div>
-
-      <article class="client-detail" aria-labelledby="client-name">
-        <div class="detail-topline"><span>THE COLLABORATION</span><span id="client-counter">01 / 15</span></div>
-        <div id="detail-content" aria-live="polite" aria-atomic="true">
-          <p class="client-category" id="client-category"></p>
-          <h2 id="client-name"></h2>
-          <p class="company-description" id="company-description"></p>
-          <div class="contribution">
-            <h3>Where I come in</h3>
-            <p id="client-work"></p>
-          </div>
-          <ul class="services" id="client-services" aria-label="Services"></ul>
-        </div>
-        <div class="detail-bottom">
+    <section class="field-section" aria-labelledby="field-heading">
+      <div class="field-heading"><p id="field-heading">PICK A COMPANION</p><p>Hover, tap, or use the arrow keys</p></div>
+      <div class="animal-stage">
+        <div class="sun" aria-hidden="true"></div><div class="cloud cloud-one" aria-hidden="true"></div><div class="cloud cloud-two" aria-hidden="true"></div><div class="hills" aria-hidden="true"></div>
+        <div id="animal-field" class="animal-field" aria-label="Client companions"></div>
+        <article class="animal-detail" aria-live="polite" aria-atomic="true">
+          <p class="detail-kicker"><span id="client-number">01</span> / 15 <span id="client-category"></span></p>
+          <h2 id="client-name"></h2><p id="company-description"></p>
+          <div id="contribution" class="contribution"><p class="detail-label">WHERE I COME IN</p><p id="client-work"></p></div>
+          <ul id="client-services" class="services" aria-label="Services"></ul>
           <a id="client-link" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
-          <div class="step-controls"><button id="previous-client" type="button" aria-label="Previous client">←</button><button id="next-client" type="button" aria-label="Next client">→</button></div>
-        </div>
-      </article>
+        </article>
+      </div>
+      <div class="field-footer"><p><span class="motion-dot" aria-hidden="true"></span> The pack is moving</p><button id="motion-toggle" type="button" aria-pressed="false">Pause motion</button></div>
     </section>
-
-    <section class="client-index" aria-label="All clients">
-      <div class="index-heading"><h2>The company I keep</h2><span id="index-count">15 COLLABORATIONS</span></div>
-      <div id="client-list" class="client-list"></div>
-    </section>
-    <section class="closing" aria-label="Start a conversation">
-      <p>Your next chapter.<br><span>Let’s build it together.</span></p>
-      <a href="mailto:tomcoap@gmail.com">Start a conversation <span aria-hidden="true">↗</span></a>
-    </section>
-    <noscript><p class="noscript-message">Freelance clients include OLYRA, Kevin’s Natural Foods, Consider the Wldflwrs, Koia, Create, gigitAI, J. Press, Unbound Snacks, SomeraRoad, Ohana Realty, Love Your Melon, Oceanfoam, Tare Market, Rich Wife, and Served. Enable JavaScript to explore their collaborations, or <a href="mailto:tomcoap@gmail.com">get in touch</a>.</p></noscript>
+    <section class="closing" aria-label="Start a conversation"><p>Your next chapter.<br><span>Let’s build it together.</span></p><a href="mailto:tomcoap@gmail.com">Start a conversation <span aria-hidden="true">↗</span></a></section>
+    <noscript><p class="noscript-message">Freelance clients include Create, OLYRA, Kevin’s Natural Foods, Consider the Wldflwrs, Koia, gigitAI, J. Press, Unbound Snacks, SomeraRoad, Ohana Realty, Love Your Melon, Oceanfoam, Tare Market, Rich Wife, and Served. Enable JavaScript to explore their collaborations, or <a href="mailto:tomcoap@gmail.com">get in touch</a>.</p></noscript>
   </main>
   <footer><span>Thomas Standing</span><span>Independent by choice. Collaborative by nature.</span><a href="https://www.linkedin.com/in/thomas-standing" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></footer>
 </body>
