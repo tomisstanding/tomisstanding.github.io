@@ -17,16 +17,23 @@ const clients = [
 ];
 
 const animals = [
-  ['create.png','13%','67%',1,'130px'],['olyra.png','30%','61%',1,'114px'],['kevins.png','45%','64%',1,'124px'],['ctwf.png','9%','23%',1,'62px'],['koia.png','64%','57%',1,'155px'],
-  ['create.png','53%','48%',1,'88px'],['jpress.png','18%','55%',1,'70px'],['unbound.png','27%','75%',1,'108px'],['somera.png','41%','46%',1,'72px'],['ohana-realty.png','74%','71%',1,'135px'],
-  ['lym.png','83%','18%',1,'78px'],['oceanfoam.png','22%','40%',1,'105px'],['tare.png','36%','78%',1,'148px'],['richwife.png','53%','78%',1,'126px'],['served.png','66%','84%',1,'164px']
+  ['create.png','13%','72%',1,'130px'],['olyra.png','30%','61%',1,'114px'],['kevins.png','45%','64%',1,'124px'],['ctwf.png','9%','23%',1,'62px'],['koia.png','64%','57%',1,'155px'],
+  ['create.png','53%','48%',1,'88px'],['jpress.png','72%','30%',1,'70px'],['unbound.png','27%','75%',1,'108px'],['somera.png','41%','46%',1,'72px'],['ohana-realty.png','74%','71%',1,'135px'],
+  ['lym.png','83%','18%',1,'78px'],['oceanfoam.png','95%','69%',1,'105px'],['tare.png','36%','78%',1,'148px'],['richwife.png','53%','78%',1,'126px'],['served.png','66%','84%',1,'164px']
 ];
 
 const field = document.querySelector('#animal-field');
 const detail = document.querySelector('.animal-detail');
+const guide = document.querySelector('#field-guide');
+const guideToggle = document.querySelector('#field-guide-toggle');
+const guideClose = document.querySelector('#field-guide-close');
+const companyKey = document.querySelector('#company-key');
+const detailClose = document.querySelector('#detail-close');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+const mobileViewport = window.matchMedia('(max-width: 680px)');
 const buttons = [];
+const keyButtons = [];
 let activeIndex = 0;
 const pad = number => String(number).padStart(2, '0');
 
@@ -49,6 +56,26 @@ clients.forEach((client,index) => {
     if (next !== undefined) { event.preventDefault(); selectClient(next,true); buttons[next].focus(); }
   });
   field.append(button); buttons.push(button);
+  const keyButton = document.createElement('button');
+  keyButton.type = 'button'; keyButton.setAttribute('aria-current','false');
+  keyButton.innerHTML = `<span class="company-key-number">${pad(index + 1)}</span><span>${client.name}</span>`;
+  keyButton.addEventListener('click',() => { selectClient(index,true); setGuideOpen(false); buttons[index].focus({preventScroll:true}); });
+  companyKey.append(keyButton); keyButtons.push(keyButton);
+});
+
+function setGuideOpen(isOpen) {
+  guide.hidden = !isOpen;
+  guideToggle.setAttribute('aria-expanded',String(isOpen));
+  if (!isOpen) guideToggle.focus({preventScroll:true});
+}
+
+guideToggle.addEventListener('click',() => setGuideOpen(guide.hidden));
+guideClose.addEventListener('click',() => setGuideOpen(false));
+document.addEventListener('keydown',event => { if (event.key === 'Escape' && !guide.hidden) setGuideOpen(false); });
+detailClose.addEventListener('click',() => { detail.hidden = true; });
+document.addEventListener('pointerdown',event => {
+  if (!mobileViewport.matches || detail.hidden || detail.contains(event.target)) return;
+  detail.hidden = true;
 });
 
 function playReaction(button) {
@@ -75,7 +102,7 @@ function positionDetail(button) {
   detail.dataset.placement = showsAbove ? 'above' : 'below';
 }
 
-function selectClient(index, shouldReact = false) {
+function selectClient(index, shouldReact = false, shouldShowDetail = true) {
   activeIndex = (index + clients.length) % clients.length;
   const client = clients[activeIndex];
   document.querySelector('#client-number').textContent = pad(activeIndex + 1);
@@ -90,12 +117,15 @@ function selectClient(index, shouldReact = false) {
   const link = document.querySelector('#client-link');
   link.href = client.url; link.setAttribute('aria-label',`Visit ${client.name} website (opens in a new tab)`);
   buttons.forEach((button,i) => button.setAttribute('aria-pressed',String(i === activeIndex)));
-  positionDetail(buttons[activeIndex]);
+  keyButtons.forEach((button,i) => button.setAttribute('aria-current',String(i === activeIndex)));
+  if (shouldShowDetail) detail.hidden = false;
+  if (!detail.hidden) positionDetail(buttons[activeIndex]);
   if (shouldReact) playReaction(buttons[activeIndex]);
 }
 
 reduceMotion.addEventListener('change',() => {
   if (reduceMotion.matches) buttons.forEach(button => button.classList.remove('is-reacting'));
 });
-window.addEventListener('resize',() => positionDetail(buttons[activeIndex]));
-selectClient(0);
+window.addEventListener('resize',() => { if (!detail.hidden) positionDetail(buttons[activeIndex]); });
+mobileViewport.addEventListener('change',event => { if (event.matches) detail.hidden = true; else detail.hidden = false; });
+selectClient(0,false,!mobileViewport.matches);

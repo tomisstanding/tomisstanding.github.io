@@ -16,8 +16,9 @@
   <link rel="stylesheet" href="stillness.css">
   <link rel="stylesheet" href="wilderness.css">
   <link rel="stylesheet" href="tooltip.css">
-  <link rel="stylesheet" href="mobile-scene.css">
-  <link rel="stylesheet" href="animal-contrast.css">
+  <link rel="stylesheet" href="mobile-scene.css?v=20260921-ohana-up-3">
+  <link rel="stylesheet" href="animal-contrast.css?v=20260921-selected-halo">
+  <link rel="stylesheet" href="field-guide.css">
   <script src="clients.js" defer></script>
 </head>
 <body>
@@ -36,14 +37,19 @@
       <div class="animal-stage">
         <div id="animal-field" class="animal-field" aria-label="Client companions"></div>
       </div>
-      <article class="animal-detail" aria-live="polite" aria-atomic="true">
+      <article class="animal-detail" aria-live="polite" aria-atomic="true" hidden>
+        <button id="detail-close" class="detail-close" type="button" aria-label="Close company note">×</button>
         <p class="detail-kicker"><span id="client-number">01</span> / 15 <span id="client-category"></span></p>
         <h2 id="client-name"></h2><p id="company-description"></p>
         <div id="contribution" class="contribution"><p class="detail-label">WHERE I COME IN</p><p id="client-work"></p></div>
         <ul id="client-services" class="services" aria-label="Services"></ul>
         <a id="client-link" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
       </article>
-      <div class="field-footer"><p><span class="motion-dot" aria-hidden="true"></span> Woodland company</p><p>Choose a companion to say hello</p></div>
+      <div class="field-footer"><p><span class="motion-dot" aria-hidden="true"></span> Woodland company</p><button id="field-guide-toggle" class="field-guide-toggle" type="button" aria-expanded="false" aria-controls="field-guide">Company key <span aria-hidden="true">↗</span></button></div>
+      <aside id="field-guide" class="field-guide" aria-label="Company key" hidden>
+        <div class="field-guide-heading"><p>FIELD GUIDE</p><button id="field-guide-close" type="button" aria-label="Close company key">×</button></div>
+        <div id="company-key" class="company-key"></div>
+      </aside>
     </section>
     <noscript><p class="noscript-message">Freelance clients include Create, OLYRA, Kevin’s Natural Foods, Consider the Wldflwrs, Koia, gigitAI, J. Press, Unbound Snacks, SomeraRoad, Ohana Realty, Love Your Melon, Oceanfoam, Tare Market, Rich Wife, and Served. Enable JavaScript to explore their collaborations, or <a href="mailto:tomcoap@gmail.com">get in touch</a>.</p></noscript>
   </main>
