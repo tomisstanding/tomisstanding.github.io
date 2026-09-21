@@ -17,9 +17,9 @@ const clients = [
 ];
 
 const animals = [
-  ['create.png','11%','25%',1.08,'16s','-.5s'],['olyra.png','26%','20%',.98,'19s','-2.4s'],['kevins.png','44%','25%',1.02,'17s','-1s'],['ctwf.png','58%','18%',.95,'21s','-3.1s'],['koia.png','83%','21%',1.05,'18s','-1.9s'],
-  ['gigit.png','14%','50%',.94,'20s','-2.8s'],['jpress.png','32%','48%',.99,'17s','-1.2s'],['unbound.png','48%','51%',.92,'22s','-3.4s'],['somera.png','60%','43%',1.08,'18s','-.8s'],['ohana-realty.png','10%','73%',.93,'20s','-1.7s'],
-  ['lym.png','27%','74%',1.04,'17s','-3s'],['oceanfoam.png','45%','72%',.97,'21s','-2.1s'],['tare.png','45%','84%',.91,'18s','-1.4s'],['richwife.png','29%','84%',1.05,'22s','-3.5s'],['served.png','74%','34%',.93,'19s','-.4s']
+  ['create.png','10%','48%',1.04],['olyra.png','23%','42%',.95],['kevins.png','37%','45%',.98],['ctwf.png','8%','20%',.82],['koia.png','55%','44%',1],
+  ['gigit.png','50%','60%',.92],['jpress.png','9%','64%',.94],['unbound.png','23%','58%',.9],['somera.png','38%','61%',1.03],['ohana-realty.png','57%','61%',.91],
+  ['lym.png','78%','19%',.88],['oceanfoam.png','18%','76%',.94],['tare.png','33%','75%',.88],['richwife.png','47%','76%',1],['served.png','61%','76%',.9]
 ];
 
 const field = document.querySelector('#animal-field');
@@ -27,31 +27,37 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
 const buttons = [];
 let activeIndex = 0;
-let paused = reduceMotion.matches;
 const pad = number => String(number).padStart(2, '0');
 
 clients.forEach((client,index) => {
-  const [art,x,y,scale,duration,delay] = animals[index];
+  const [art,x,y,scale] = animals[index];
   const button = document.createElement('button');
   button.type = 'button'; button.className = 'animal';
-  button.dataset.route = index % 5;
+  button.dataset.id = client.id;
   button.setAttribute('aria-label',`Explore ${client.name}`); button.setAttribute('aria-controls','client-name');
-  button.style.setProperty('--x',x); button.style.setProperty('--y',y); button.style.setProperty('--scale',scale); button.style.setProperty('--duration',duration); button.style.setProperty('--delay',delay);
+  button.style.setProperty('--x',x); button.style.setProperty('--y',y); button.style.setProperty('--scale',scale);
   button.innerHTML = `<span class="animal-shadow" aria-hidden="true"></span><img class="animal-face" src="animals/${art}" alt=""><span class="animal-tag" aria-hidden="true">${client.name}</span>`;
-  button.addEventListener('pointerenter',() => { if (finePointer.matches) selectClient(index); });
-  button.addEventListener('focus',() => selectClient(index)); button.addEventListener('click',() => selectClient(index));
+  button.addEventListener('pointerenter',() => { if (finePointer.matches) selectClient(index,true); });
+  button.addEventListener('focus',() => selectClient(index,true)); button.addEventListener('click',() => selectClient(index,true));
   button.addEventListener('keydown',event => {
     let next;
     if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (index + 1) % clients.length;
     if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = (index - 1 + clients.length) % clients.length;
     if (event.key === 'Home') next = 0;
     if (event.key === 'End') next = clients.length - 1;
-    if (next !== undefined) { event.preventDefault(); selectClient(next); buttons[next].focus(); }
+    if (next !== undefined) { event.preventDefault(); selectClient(next,true); buttons[next].focus(); }
   });
   field.append(button); buttons.push(button);
 });
 
-function selectClient(index) {
+function playReaction(button) {
+  if (reduceMotion.matches) return;
+  button.classList.remove('is-reacting');
+  void button.offsetWidth;
+  button.classList.add('is-reacting');
+}
+
+function selectClient(index, shouldReact = false) {
   activeIndex = (index + clients.length) % clients.length;
   const client = clients[activeIndex];
   document.querySelector('#client-number').textContent = pad(activeIndex + 1);
@@ -66,13 +72,10 @@ function selectClient(index) {
   const link = document.querySelector('#client-link');
   link.href = client.url; link.setAttribute('aria-label',`Visit ${client.name} website (opens in a new tab)`);
   buttons.forEach((button,i) => button.setAttribute('aria-pressed',String(i === activeIndex)));
+  if (shouldReact) playReaction(buttons[activeIndex]);
 }
 
-function setMotion() {
-  field.classList.toggle('is-paused',paused);
-  document.querySelector('#motion-toggle').setAttribute('aria-pressed',String(paused));
-  document.querySelector('#motion-toggle').textContent = paused ? 'Resume motion' : 'Pause motion';
-}
-document.querySelector('#motion-toggle').addEventListener('click',() => { paused = !paused; setMotion(); });
-reduceMotion.addEventListener('change',event => { paused = event.matches; setMotion(); });
-selectClient(0); setMotion();
+reduceMotion.addEventListener('change',() => {
+  if (reduceMotion.matches) buttons.forEach(button => button.classList.remove('is-reacting'));
+});
+selectClient(0);

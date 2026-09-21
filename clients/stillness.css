@@ -1,0 +1,2 @@
+/* Disable all ambient movement. Client selection is the only animation. */
+.motion-dot { animation:none!important; }
