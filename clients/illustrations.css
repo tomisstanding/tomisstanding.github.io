@@ -1,5 +1,5 @@
 /* The supplied drawings have white paper backgrounds; multiply lets that paper inherit the field color. */
-.animal-face{position:relative;display:block;width:124%;height:var(--animal-size);margin-left:-12%;object-fit:contain;mix-blend-mode:multiply;filter:drop-shadow(0 8px 6px #35512328);transition:transform .25s,filter .25s}
+.animal-face{position:relative;display:block;width:116%;height:var(--animal-size);margin-left:-8%;object-fit:contain;filter:drop-shadow(0 8px 6px #35512328);transition:transform .25s,filter .25s}
 .animal:hover .animal-face,.animal:focus-visible .animal-face,.animal[aria-pressed='true'] .animal-face{transform:translateY(-9px) rotate(2deg);filter:drop-shadow(0 14px 8px #35512332)}
 .asset-credit{font-size:9px;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:680px){.animal-face{height:calc(var(--animal-size) * 1.1)}}
