@@ -1,2 +1,2 @@
-/* Darker ink and a thin paper glow separate each drawing without a visible backdrop shape. */
-.animal-face,.animal:hover .animal-face,.animal:focus-visible .animal-face,.animal[aria-pressed='true'] .animal-face{position:relative;z-index:1;mix-blend-mode:normal!important;filter:contrast(1.28) drop-shadow(0 0 1px #fffdf5) drop-shadow(0 0 3px #fffdf5)!important}.animal-tag{z-index:2}.animal.is-reacting .animal-face{filter:contrast(1.28) drop-shadow(0 0 1px #fffdf5) drop-shadow(0 0 3px #fffdf5)!important}
+/* Preserve each original drawing without blending it into the forest linework. */
+.animal-face,.animal:hover .animal-face,.animal:focus-visible .animal-face,.animal[aria-pressed='true'] .animal-face{position:relative;z-index:1;mix-blend-mode:normal!important;filter:contrast(1.28)!important}.animal-tag{z-index:2}.animal.is-reacting .animal-face{filter:contrast(1.28)!important}
