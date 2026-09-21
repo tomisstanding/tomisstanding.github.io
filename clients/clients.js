@@ -23,6 +23,7 @@ const animals = [
 ];
 
 const field = document.querySelector('#animal-field');
+const detail = document.querySelector('.animal-detail');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
 const buttons = [];
@@ -57,6 +58,23 @@ function playReaction(button) {
   button.classList.add('is-reacting');
 }
 
+function positionDetail(button) {
+  if (window.matchMedia('(max-width: 680px)').matches) return;
+  const animal = button.getBoundingClientRect();
+  const cardWidth = detail.offsetWidth;
+  const cardHeight = detail.offsetHeight;
+  const gap = 18;
+  const inset = 18;
+  const center = animal.left + animal.width / 2;
+  const left = Math.min(window.innerWidth - cardWidth / 2 - inset,Math.max(cardWidth / 2 + inset,center));
+  const roomAbove = animal.top - gap;
+  const showsAbove = roomAbove >= cardHeight + inset;
+  const top = showsAbove ? roomAbove : Math.min(window.innerHeight - inset - cardHeight,animal.bottom + gap);
+  detail.style.setProperty('--detail-left',`${left}px`);
+  detail.style.setProperty('--detail-top',`${top}px`);
+  detail.dataset.placement = showsAbove ? 'above' : 'below';
+}
+
 function selectClient(index, shouldReact = false) {
   activeIndex = (index + clients.length) % clients.length;
   const client = clients[activeIndex];
@@ -72,10 +90,12 @@ function selectClient(index, shouldReact = false) {
   const link = document.querySelector('#client-link');
   link.href = client.url; link.setAttribute('aria-label',`Visit ${client.name} website (opens in a new tab)`);
   buttons.forEach((button,i) => button.setAttribute('aria-pressed',String(i === activeIndex)));
+  positionDetail(buttons[activeIndex]);
   if (shouldReact) playReaction(buttons[activeIndex]);
 }
 
 reduceMotion.addEventListener('change',() => {
   if (reduceMotion.matches) buttons.forEach(button => button.classList.remove('is-reacting'));
 });
+window.addEventListener('resize',() => positionDetail(buttons[activeIndex]));
 selectClient(0);
