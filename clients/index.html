@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="mobile-scene.css?v=20260921-ohana-up-3">
   <link rel="stylesheet" href="animal-contrast.css?v=20260921-selected-halo">
   <link rel="stylesheet" href="field-guide.css">
+  <link rel="stylesheet" href="ambient-life.css?v=20260921-ambient">
   <script src="clients.js" defer></script>
 </head>
 <body>
@@ -35,6 +36,10 @@
     <section class="field-section" aria-labelledby="field-heading">
       <div class="field-heading"><p id="field-heading">PICK A COMPANION</p><p>Hover, tap, or use the arrow keys</p></div>
       <div class="animal-stage">
+        <div class="ambient-life" aria-hidden="true">
+          <span class="creek-bubble bubble-one"></span><span class="creek-bubble bubble-two"></span><span class="creek-bubble bubble-three"></span>
+          <svg class="passing-bird" viewBox="0 0 44 20" focusable="false"><path class="bird-wing bird-wing-left" d="M22 11C15 2 7 2 2 5c8 0 13 4 20 8Z"/><path class="bird-wing bird-wing-right" d="M22 11C29 2 37 2 42 5c-8 0-13 4-20 8Z"/><path class="bird-body" d="M19 10c2-2 5-2 7 0l3 3-7 3-7-3Z"/></svg>
+        </div>
         <div id="animal-field" class="animal-field" aria-label="Client companions"></div>
       </div>
       <article class="animal-detail" aria-live="polite" aria-atomic="true" hidden>
