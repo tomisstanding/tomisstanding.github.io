@@ -35,6 +35,7 @@ const mobileViewport = window.matchMedia('(max-width: 680px)');
 const buttons = [];
 const keyButtons = [];
 let activeIndex = 0;
+let restoringAnimalFocus = false;
 const pad = number => String(number).padStart(2, '0');
 
 clients.forEach((client,index) => {
@@ -46,7 +47,7 @@ clients.forEach((client,index) => {
   button.style.setProperty('--x',x); button.style.setProperty('--y',y); button.style.setProperty('--scale',scale); button.style.setProperty('--animal-size',size);
   button.innerHTML = `<span class="animal-shadow" aria-hidden="true"></span><span class="animal-halo" aria-hidden="true"></span><img class="animal-face" src="animals/${art}" alt=""><span class="animal-tag" aria-hidden="true">${client.name}</span>`;
   button.addEventListener('pointerenter',() => { if (finePointer.matches) selectClient(index,true); });
-  button.addEventListener('focus',() => selectClient(index,true)); button.addEventListener('click',() => selectClient(index,true));
+  button.addEventListener('focus',() => { if (!restoringAnimalFocus) selectClient(index,true); }); button.addEventListener('click',() => selectClient(index,true));
   button.addEventListener('keydown',event => {
     let next;
     if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (index + 1) % clients.length;
@@ -58,24 +59,43 @@ clients.forEach((client,index) => {
   field.append(button); buttons.push(button);
   const keyButton = document.createElement('button');
   keyButton.type = 'button'; keyButton.setAttribute('aria-current','false');
-  keyButton.innerHTML = `<span class="company-key-number">${pad(index + 1)}</span><span>${client.name}</span>`;
-  keyButton.addEventListener('click',() => { selectClient(index,true); setGuideOpen(false); buttons[index].focus({preventScroll:true}); });
+  keyButton.innerHTML = `<span class="company-key-number">${pad(index + 1)}</span><img class="company-key-art" src="animals/${art}" alt="" loading="lazy"><span>${client.name}</span>`;
+  keyButton.addEventListener('click',() => { setGuideOpen(false,false); selectClient(index,true); focusAnimal(index); });
   companyKey.append(keyButton); keyButtons.push(keyButton);
 });
 
-function setGuideOpen(isOpen) {
+function focusAnimal(index) {
+  restoringAnimalFocus = true;
+  buttons[index].focus({preventScroll:true});
+  restoringAnimalFocus = false;
+}
+
+function setGuideOpen(isOpen, restoreFocus = true) {
   guide.hidden = !isOpen;
   guideToggle.setAttribute('aria-expanded',String(isOpen));
-  if (!isOpen) guideToggle.focus({preventScroll:true});
+  if (isOpen) keyButtons[activeIndex].focus();
+  else if (restoreFocus) guideToggle.focus({preventScroll:true});
+}
+
+function closeDetail(restoreFocus = false) {
+  detail.hidden = true;
+  buttons.forEach(button => button.setAttribute('aria-pressed','false'));
+  keyButtons.forEach(button => button.setAttribute('aria-current','false'));
+  if (restoreFocus) focusAnimal(activeIndex);
 }
 
 guideToggle.addEventListener('click',() => setGuideOpen(guide.hidden));
 guideClose.addEventListener('click',() => setGuideOpen(false));
-document.addEventListener('keydown',event => { if (event.key === 'Escape' && !guide.hidden) setGuideOpen(false); });
-detailClose.addEventListener('click',() => { detail.hidden = true; });
+document.addEventListener('keydown',event => {
+  if (event.key !== 'Escape') return;
+  if (!guide.hidden) setGuideOpen(false);
+  else if (!detail.hidden) closeDetail(true);
+});
+detailClose.addEventListener('click',() => closeDetail(true));
 document.addEventListener('pointerdown',event => {
-  if (!mobileViewport.matches || detail.hidden || detail.contains(event.target)) return;
-  detail.hidden = true;
+  if (!guide.hidden && !guide.contains(event.target) && !guideToggle.contains(event.target)) setGuideOpen(false,false);
+  if (detail.hidden || detail.contains(event.target) || event.target.closest('.animal, .field-guide, .field-guide-toggle')) return;
+  closeDetail();
 });
 
 function playReaction(button) {
@@ -96,7 +116,8 @@ function positionDetail(button) {
   const left = Math.min(window.innerWidth - cardWidth / 2 - inset,Math.max(cardWidth / 2 + inset,center));
   const roomAbove = animal.top - gap;
   const showsAbove = roomAbove >= cardHeight + inset;
-  const top = showsAbove ? roomAbove : Math.min(window.innerHeight - inset - cardHeight,animal.bottom + gap);
+  const footerTop = document.querySelector('.field-footer').getBoundingClientRect().top;
+  const top = showsAbove ? roomAbove : Math.max(inset,Math.min(footerTop - inset - cardHeight,animal.bottom + gap));
   detail.style.setProperty('--detail-left',`${left}px`);
   detail.style.setProperty('--detail-top',`${top}px`);
   detail.dataset.placement = showsAbove ? 'above' : 'below';
@@ -116,9 +137,9 @@ function selectClient(index, shouldReact = false, shouldShowDetail = true) {
   services.replaceChildren(...client.services.map(service => { const item = document.createElement('li'); item.textContent = service; return item; }));
   const link = document.querySelector('#client-link');
   link.href = client.url; link.setAttribute('aria-label',`Visit ${client.name} website (opens in a new tab)`);
-  buttons.forEach((button,i) => button.setAttribute('aria-pressed',String(i === activeIndex)));
-  keyButtons.forEach((button,i) => button.setAttribute('aria-current',String(i === activeIndex)));
   if (shouldShowDetail) detail.hidden = false;
+  buttons.forEach((button,i) => button.setAttribute('aria-pressed',String(!detail.hidden && i === activeIndex)));
+  keyButtons.forEach((button,i) => button.setAttribute('aria-current',String(!detail.hidden && i === activeIndex)));
   if (!detail.hidden) positionDetail(buttons[activeIndex]);
   if (shouldReact) playReaction(buttons[activeIndex]);
 }
@@ -127,5 +148,5 @@ reduceMotion.addEventListener('change',() => {
   if (reduceMotion.matches) buttons.forEach(button => button.classList.remove('is-reacting'));
 });
 window.addEventListener('resize',() => { if (!detail.hidden) positionDetail(buttons[activeIndex]); });
-mobileViewport.addEventListener('change',event => { if (event.matches) detail.hidden = true; else detail.hidden = false; });
-selectClient(0,false,!mobileViewport.matches);
+mobileViewport.addEventListener('change',() => closeDetail());
+selectClient(0,false,false);

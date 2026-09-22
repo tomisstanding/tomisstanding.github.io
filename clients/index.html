@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="A few of the brands I help build, improve, and grow. Explore Thomas Standing’s freelance work in ecommerce and web development.">
-  <meta name="theme-color" content="#eff2df">
+  <meta name="theme-color" content="#fffdf7">
   <title>Clients & Collaborations | Thomas Standing</title>
   <link rel="icon" href="../images/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,15 +12,15 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="clients.css">
   <link rel="stylesheet" href="illustrations.css">
-  <link rel="stylesheet" href="zoo.css">
+  <link rel="stylesheet" href="zoo.css?v=20260921-woodland-polish">
   <link rel="stylesheet" href="stillness.css">
   <link rel="stylesheet" href="wilderness.css">
-  <link rel="stylesheet" href="tooltip.css">
-  <link rel="stylesheet" href="mobile-scene.css?v=20260921-kevins-left-20">
+  <link rel="stylesheet" href="tooltip.css?v=20260921-woodland-polish">
+  <link rel="stylesheet" href="mobile-scene.css?v=20260921-woodland-polish">
   <link rel="stylesheet" href="animal-contrast.css?v=20260921-selected-halo">
-  <link rel="stylesheet" href="field-guide.css">
-  <link rel="stylesheet" href="ambient-life.css?v=20260921-mobile-bubbles-bold">
-  <script src="clients.js" defer></script>
+  <link rel="stylesheet" href="field-guide.css?v=20260921-woodland-polish">
+  <link rel="stylesheet" href="ambient-life.css?v=20260921-pencil-water-flight">
+  <script src="clients.js?v=20260921-woodland-polish" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#animal-field">Skip to clients</a>
@@ -37,9 +37,34 @@
       <div class="field-heading"><p id="field-heading">PICK A COMPANION</p><p>Hover, tap, or use the arrow keys</p></div>
       <div class="animal-stage">
         <div class="ambient-life" aria-hidden="true">
-          <span class="creek-bubble bubble-one"></span><span class="creek-bubble bubble-two"></span><span class="creek-bubble bubble-three"></span>
-          <svg class="passing-bird" viewBox="0 0 44 20" focusable="false"><path class="bird-wing bird-wing-left" d="M22 11C15 2 7 2 2 5c8 0 13 4 20 8Z"/><path class="bird-wing bird-wing-right" d="M22 11C29 2 37 2 42 5c-8 0-13 4-20 8Z"/><path class="bird-body" d="M19 10c2-2 5-2 7 0l3 3-7 3-7-3Z"/></svg>
+          <svg class="creek-surface" viewBox="0 0 1659 948" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <defs>
+              <!-- Broken, slightly irregular arcs follow the pencil water marks. -->
+              <g id="pencil-water-ring">
+                <path d="M-34-1C-32-5-19-7-8-6M1-6C18-7 34-4 37-1M37 1C31 5 15 7 4 6M-6 6C-21 7-33 4-36 2"/>
+                <path class="ripple-pencil-echo" d="M-29-3C-22-6-10-7 4-6M11 7C21 6 32 5 36 2M-35 3C-29 5-18 7-13 7"/>
+              </g>
+            </defs>
+            <g class="ripple-upstream" transform="translate(782 530) scale(.68)">
+              <g class="water-ring"><use href="#pencil-water-ring"/></g>
+              <g class="water-ring"><use href="#pencil-water-ring"/></g>
+              <g class="water-ring"><use href="#pencil-water-ring"/></g>
+            </g>
+            <g class="ripple-midstream" transform="translate(884 562)">
+              <path class="water-dimple" d="M-3 0Q0-2 3 0M-5 2Q0 4 5 2"/>
+              <g class="water-ring"><use href="#pencil-water-ring"/></g>
+              <g class="water-ring"><use href="#pencil-water-ring"/></g>
+              <g class="water-ring"><use href="#pencil-water-ring"/></g>
+            </g>
+            <g class="ripple-downstream" transform="translate(1004 729) scale(1.18)">
+              <g class="water-ring"><use href="#pencil-water-ring"/></g>
+              <g class="water-ring"><use href="#pencil-water-ring"/></g>
+              <g class="water-ring"><use href="#pencil-water-ring"/></g>
+            </g>
+          </svg>
+          <div class="forest-flyby"><span class="sketch-bird"></span></div>
         </div>
+
         <div id="animal-field" class="animal-field" aria-label="Client companions"></div>
       </div>
       <article class="animal-detail" aria-live="polite" aria-atomic="true" hidden>
@@ -52,7 +77,7 @@
       </article>
       <div class="field-footer"><p><span class="motion-dot" aria-hidden="true"></span> Woodland company</p><button id="field-guide-toggle" class="field-guide-toggle" type="button" aria-expanded="false" aria-controls="field-guide">Company key <span aria-hidden="true">↗</span></button></div>
       <aside id="field-guide" class="field-guide" aria-label="Company key" hidden>
-        <div class="field-guide-heading"><p>FIELD GUIDE</p><button id="field-guide-close" type="button" aria-label="Close company key">×</button></div>
+        <div class="field-guide-heading"><p>FIELD GUIDE · 15 COMPANIES</p><button id="field-guide-close" type="button" aria-label="Close company key">×</button></div>
         <div id="company-key" class="company-key"></div>
       </aside>
     </section>

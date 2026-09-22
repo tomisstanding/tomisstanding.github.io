@@ -1,2 +1,96 @@
-/* Small, intermittent signs of life keep the forest from feeling static. */
-.ambient-life{position:absolute;inset:0;z-index:4;overflow:hidden;pointer-events:none}.creek-bubble{position:absolute;width:16px;aspect-ratio:1;border:2px solid #348eac;border-radius:50%;background:#dff7ffde;box-shadow:0 0 0 3px #ffffffc9,inset 0 0 0 2px #ffffffa8;opacity:.72;animation:creek-bubble 6s ease-in-out infinite}.creek-bubble:after{content:'';position:absolute;left:23%;top:18%;width:20%;aspect-ratio:1;border-radius:50%;background:#fff}.bubble-one{left:49%;top:61%;animation-delay:-1.2s}.bubble-two{left:55%;top:65%;width:12px;animation-duration:7s;animation-delay:-5.4s}.bubble-three{left:44%;top:69%;width:13px;animation-duration:8s;animation-delay:-8.1s}.passing-bird{position:absolute;top:20%;left:0;width:42px;height:auto;overflow:visible;fill:#263127;opacity:0;transform:translateX(-60px);animation:bird-pass 10s linear infinite}.bird-wing{transform-box:fill-box}.bird-wing-left{transform-origin:100% 100%;animation:wing-left .32s ease-in-out infinite alternate}.bird-wing-right{transform-origin:0 100%;animation:wing-right .32s ease-in-out infinite alternate}.bird-body{opacity:.96}@keyframes creek-bubble{0%,100%{opacity:.58;transform:translateY(0) scale(.72)}50%{opacity:1;transform:translateY(-18px) scale(1.05)}}@keyframes bird-pass{0%,68%{opacity:0;transform:translate(-60px,4px) scale(.8)}72%{opacity:.7}92%{opacity:.7;transform:translate(calc(100vw + 60px),-8px) scale(.92)}96%,100%{opacity:0;transform:translate(calc(100vw + 75px),-10px) scale(.92)}}@keyframes wing-left{from{transform:rotate(-12deg)}to{transform:rotate(9deg)}}@keyframes wing-right{from{transform:rotate(12deg)}to{transform:rotate(-9deg)}}@media(max-width:680px){.bubble-one{left:50%;top:52%}.bubble-two{left:57%;top:58%}.bubble-three{left:45%;top:64%}.passing-bird{top:24%;width:34px}}@media(prefers-reduced-motion:reduce){.ambient-life{display:none}}
+/* Pencil marks share the creek illustration's coordinates, crop, and gray palette. */
+.ambient-life {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.creek-surface {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #625f5b;
+  stroke-width: 1.15;
+  stroke-linecap: round;
+}
+
+.water-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: pencil-ripple 7.2s linear infinite;
+}
+
+.water-ring:nth-child(2) { animation-delay: -2.4s; }
+.water-ring:nth-child(3) { animation-delay: -4.8s; }
+.ripple-upstream .water-ring { animation-duration: 8.4s; }
+.ripple-upstream .water-ring:nth-child(2) { animation-delay: -2.8s; }
+.ripple-upstream .water-ring:nth-child(3) { animation-delay: -5.6s; }
+.ripple-downstream .water-ring { animation-duration: 6.6s; }
+.ripple-downstream .water-ring:nth-child(2) { animation-delay: -2.2s; }
+.ripple-downstream .water-ring:nth-child(3) { animation-delay: -4.4s; }
+.ripple-pencil-echo { opacity: .28; stroke-width: .7; }
+.water-dimple {
+  opacity: 0;
+  animation: creek-dimple 7.2s ease-out infinite;
+}
+
+/* The transparent pencil sheet contains four actual wing positions. */
+.forest-flyby {
+  position: absolute;
+  top: 23%;
+  left: 0;
+  width: 76px;
+  height: 90px;
+  opacity: 0;
+  will-change: transform;
+  animation: woodland-bird-crossing 10s linear infinite;
+}
+
+.sketch-bird {
+  display: block;
+  width: 76px;
+  height: 75px;
+  background: url('ambient/songbird-pencil-flight.png') 0 0 / 200% 200% no-repeat;
+  animation: songbird-wingbeat .64s steps(1, end) infinite;
+}
+
+@keyframes pencil-ripple {
+  0% { opacity: 0; transform: scale(.3, .4); }
+  12% { opacity: .65; }
+  48% { opacity: .48; }
+  90%, 100% { opacity: 0; transform: scale(1.5, 1.45); }
+}
+
+@keyframes creek-dimple {
+  0%, 6%, 100% { opacity: 0; }
+  2% { opacity: .52; }
+}
+
+@keyframes woodland-bird-crossing {
+  0%, 35% { opacity: 0; transform: translate(-100px, 0) rotate(-4deg); }
+  39% { opacity: .84; }
+  57% { transform: translate(calc(43vw - 34px), -18px) rotate(-2deg); }
+  72% { opacity: .84; }
+  77%, 100% { opacity: 0; transform: translate(calc(100vw + 100px), 5px) rotate(3deg); }
+}
+
+@keyframes songbird-wingbeat {
+  0%, 100% { background-position: 0 0; transform: translateY(0); }
+  25% { background-position: 100% 0; transform: translateY(0); }
+  50% { background-position: 0 100%; transform: translateY(21%); }
+  75% { background-position: 100% 100%; transform: translateY(21%); }
+}
+
+@media (max-width: 680px) {
+  .forest-flyby { top: 29%; width: 62px; height: 76px; }
+  .sketch-bird { width: 62px; height: 61px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-life { display: none; }
+}

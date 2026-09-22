@@ -1,3 +1,96 @@
-/* A compact index lets visitors choose a company without hunting through the scene. */
-.field-guide-toggle{display:inline-flex;align-items:center;gap:8px;border:0;border-bottom:1px solid currentColor;padding:3px 0;background:transparent;color:#465044;font-family:var(--mono);font-size:10px;letter-spacing:.06em}.field-guide-toggle span{font-size:14px;line-height:.8}.field-guide{position:fixed;right:24px;bottom:88px;z-index:30;width:min(360px,calc(100vw - 36px));max-height:min(480px,calc(100vh - 120px));overflow:auto;padding:14px;background:#fffdf7fa;border:1px solid #596455;box-shadow:7px 8px 0 #313b2924}.field-guide[hidden]{display:none}.field-guide-heading{display:flex;align-items:center;justify-content:space-between;padding:0 0 11px;border-bottom:1px solid #d7dccf}.field-guide-heading p{margin:0;color:#546152;font-family:var(--mono);font-size:9px;letter-spacing:.12em}.field-guide-heading button{width:25px;height:25px;border:1px solid #8d9688;border-radius:50%;background:transparent;color:#334032;font-size:19px;line-height:1}.company-key{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;margin-top:12px}.company-key button{display:flex;align-items:center;gap:8px;width:100%;min-height:34px;border:1px solid #d7dccf;border-radius:2px;padding:7px 8px;background:#fffdf7;color:#364235;text-align:left;font-family:var(--body);font-size:11px;font-weight:600;line-height:1.1;transition:background .16s ease,border-color .16s ease,transform .16s ease}.company-key button:hover,.company-key button:focus-visible,.company-key button[aria-current='true']{border-color:#596455;background:#eaf1cc;outline:none}.company-key button:active{transform:translateY(1px)}.company-key-number{flex:0 0 auto;color:#79896c;font-family:var(--mono);font-size:8px;font-weight:400}
-@media(max-width:680px){.field-guide{right:16px;bottom:80px;width:calc(100vw - 32px);max-height:min(430px,calc(100svh - 104px))}.company-key{grid-template-columns:1fr}.field-guide-toggle{font-size:9px}}
+/* A quiet paper index pairs every company with its companion. */
+.field-footer {
+  height: calc(56px + env(safe-area-inset-bottom));
+  padding: 0 28px env(safe-area-inset-bottom);
+  background: #fffdf7f7;
+  border-color: #8b91844d;
+  box-shadow: none;
+}
+.field-footer p { font-size: 10px; letter-spacing: .06em; }
+.motion-dot { width: 5px; height: 5px; margin-right: 7px; background: #7d8c6d; }
+.field-footer .field-guide-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #465044;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .04em;
+}
+.field-guide-toggle span { font-size: 17px; transition: transform .2s ease; }
+.field-guide-toggle:hover span, .field-guide-toggle[aria-expanded='true'] span { transform: rotate(45deg); }
+.field-guide {
+  position: fixed;
+  right: 24px;
+  bottom: calc(72px + env(safe-area-inset-bottom));
+  z-index: 30;
+  width: min(384px, calc(100vw - 32px));
+  max-height: min(540px, calc(100svh - 100px - env(safe-area-inset-bottom)));
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 0 14px 14px;
+  background: var(--note-paper);
+  border: 1px solid var(--note-border);
+  box-shadow: 0 5px 20px #25302518;
+  scrollbar-width: thin;
+  scrollbar-color: #a4aa9b transparent;
+}
+.field-guide[hidden] { display: none; }
+.field-guide-heading {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 54px;
+  border-bottom: 1px solid #d7dccf;
+  background: var(--note-paper);
+}
+.field-guide-heading p { margin: 0; color: #546152; font-family: var(--mono); font-size: 9px; letter-spacing: .1em; }
+.field-guide-heading button {
+  width: 44px;
+  height: 44px;
+  margin-right: -7px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #596455;
+  font-size: 24px;
+  line-height: 1;
+}
+.field-guide-heading button:hover { background: #e9ece2; }
+.company-key { display: grid; grid-template-columns: 1fr; margin-top: 8px; gap: 2px; }
+.company-key button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 6px 9px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  color: #364235;
+  text-align: left;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.25;
+  transition: background .16s ease, border-color .16s ease;
+}
+.company-key button:hover, .company-key button[aria-current='true'] { border-color: #cbd2c1; background: #edf0e7; }
+.company-key button:focus-visible { outline: 2px solid #6b795e; outline-offset: -2px; background: #edf0e7; }
+.company-key-number { flex: 0 0 auto; width: 16px; color: #78846c; font-family: var(--mono); font-size: 9px; font-weight: 400; }
+.company-key-art { flex: 0 0 34px; width: 34px; height: 32px; object-fit: contain; filter: brightness(0); }
+
+@media (max-width: 680px) {
+  .field-footer { padding-inline: 16px; }
+  .field-footer p { font-size: 9px; }
+  .field-footer .field-guide-toggle { font-size: 10px; }
+  .field-guide { right: 16px; width: calc(100vw - 32px); }
+}
