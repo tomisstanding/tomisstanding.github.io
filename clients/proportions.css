@@ -45,7 +45,7 @@
   .animal[data-id='koia'] { --animal-size: 90px !important; --ground-shift: 0px; }
   .animal[data-id='gigit'] { --animal-size: 40px !important; --ground-shift: 10.8px; }
   .animal[data-id='jpress'] { --animal-size: 24px !important; --ground-shift: 10.8px; }
-  .animal[data-id='unbound'] { --animal-size: 44px !important; --ground-shift: 12px; }
+  .animal[data-id='unbound'] { --animal-size: 44px !important; --ground-shift: -8px; }
   .animal[data-id='somera'] { --animal-size: 24px !important; --ground-shift: 11.4px; }
   .animal[data-id='ohana-realty'] { --animal-size: 52px !important; --ground-shift: 16.8px; }
   .animal[data-id='lym'] { --animal-size: 44px !important; --ground-shift: 3.6px; }
