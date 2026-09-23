@@ -1,0 +1,64 @@
+/* Relative species sizes, with the existing drawing baselines held in place.
+   Perspective keeps the distant cat smaller; small companions retain 44px hit areas. */
+.animal { top: calc(var(--y) + var(--ground-shift)) !important; }
+.animal::after {
+  content: ''; position: absolute; left: 50%; top: 0;
+  width: max(100%, 44px); height: 100%; transform: translateX(-50%);
+}
+.animal[data-id='create'] { --animal-size: 80px !important; --ground-shift: 25px; }
+.animal[data-id='olyra'] { --animal-size: 110px !important; --ground-shift: 2px; }
+.animal[data-id='kevins'] { --animal-size: 78px !important; --ground-shift: 23px; }
+.animal[data-id='ctwf'] { --animal-size: 52px !important; --ground-shift: 5px; }
+.animal[data-id='koia'] { --animal-size: 154px !important; --ground-shift: 0.5px; }
+.animal[data-id='gigit'] { --animal-size: 62px !important; --ground-shift: 13px; }
+.animal[data-id='jpress'] { --animal-size: 30px !important; --ground-shift: 20px; }
+.animal[data-id='unbound'] { --animal-size: 68px !important; --ground-shift: 20px; }
+.animal[data-id='somera'] { --animal-size: 32px !important; --ground-shift: 20px; }
+.animal[data-id='ohana-realty'] { --animal-size: 84px !important; --ground-shift: 25.5px; }
+.animal[data-id='lym'] { --animal-size: 66px !important; --ground-shift: 6px; }
+.animal[data-id='oceanfoam'] { --animal-size: 82px !important; --ground-shift: 11.5px; }
+.animal[data-id='tare'] { --animal-size: 180px !important; --ground-shift: -16px; }
+.animal[data-id='richwife'] { --animal-size: 144px !important; --ground-shift: -9px; }
+.animal[data-id='served'] { --animal-size: 224px !important; --ground-shift: -30px; }
+@media (min-width: 681px) and (max-width: 900px) {
+  .animal[data-id='create'] { --animal-size: 64px !important; --ground-shift: calc((clamp(58px, 10vw, 100px) - 64px) / 2); }
+  .animal[data-id='olyra'] { --animal-size: 88px !important; --ground-shift: calc((clamp(58px, 10vw, 100px) - 88px) / 2); }
+  .animal[data-id='kevins'] { --animal-size: 62px !important; --ground-shift: calc((clamp(58px, 10vw, 100px) - 62px) / 2); }
+  .animal[data-id='ctwf'] { --animal-size: 42px !important; --ground-shift: calc((54px - 42px) / 2); }
+  .animal[data-id='koia'] { --animal-size: 123px !important; --ground-shift: calc((clamp(58px, 10vw, 100px) - 123px) / 2); }
+  .animal[data-id='gigit'] { --animal-size: 50px !important; --ground-shift: calc((clamp(58px, 10vw, 100px) - 50px) / 2); }
+  .animal[data-id='jpress'] { --animal-size: 24px !important; --ground-shift: calc((54px - 24px) / 2); }
+  .animal[data-id='unbound'] { --animal-size: 54px !important; --ground-shift: calc((clamp(58px, 10vw, 100px) - 54px) / 2); }
+  .animal[data-id='somera'] { --animal-size: 26px !important; --ground-shift: calc((54px - 26px) / 2); }
+  .animal[data-id='ohana-realty'] { --animal-size: 67px !important; --ground-shift: calc((clamp(58px, 10vw, 100px) - 67px) / 2); }
+  .animal[data-id='lym'] { --animal-size: 53px !important; --ground-shift: calc((54px - 53px) / 2); }
+  .animal[data-id='oceanfoam'] { --animal-size: 66px !important; --ground-shift: calc((clamp(58px, 10vw, 100px) - 66px) / 2); }
+  .animal[data-id='tare'] { --animal-size: 144px !important; --ground-shift: calc((clamp(58px, 10vw, 100px) - 144px) / 2); }
+  .animal[data-id='richwife'] { --animal-size: 115px !important; --ground-shift: calc((clamp(58px, 10vw, 100px) - 115px) / 2); }
+  .animal[data-id='served'] { --animal-size: 179px !important; --ground-shift: calc((clamp(58px, 10vw, 100px) - 179px) / 2); }
+}
+@media (max-width: 680px) {
+  .animal[data-id='create'] { --animal-size: 50px !important; --ground-shift: 16.8px; }
+  .animal[data-id='olyra'] { --animal-size: 72px !important; --ground-shift: 0px; }
+  .animal[data-id='kevins'] { --animal-size: 48px !important; --ground-shift: 16.8px; }
+  .animal[data-id='ctwf'] { --animal-size: 50px !important; --ground-shift: 9.6px; }
+  .animal[data-id='koia'] { --animal-size: 90px !important; --ground-shift: 0px; }
+  .animal[data-id='gigit'] { --animal-size: 40px !important; --ground-shift: 10.8px; }
+  .animal[data-id='jpress'] { --animal-size: 24px !important; --ground-shift: 10.8px; }
+  .animal[data-id='unbound'] { --animal-size: 44px !important; --ground-shift: 12px; }
+  .animal[data-id='somera'] { --animal-size: 24px !important; --ground-shift: 11.4px; }
+  .animal[data-id='ohana-realty'] { --animal-size: 52px !important; --ground-shift: 16.8px; }
+  .animal[data-id='lym'] { --animal-size: 44px !important; --ground-shift: 3.6px; }
+  .animal[data-id='oceanfoam'] { --animal-size: 52px !important; --ground-shift: 9.6px; }
+  .animal[data-id='tare'] { --animal-size: 108px !important; --ground-shift: -10.8px; }
+  .animal[data-id='richwife'] { --animal-size: 88px !important; --ground-shift: -6px; }
+  .animal[data-id='served'] { --animal-size: 134px !important; --ground-shift: -24px; }
+}
+/* Keep nearby companions distinct and small hit targets above large empty image boxes. */
+.animal[data-id='create'], .animal[data-id='jpress'], .animal[data-id='somera'] { z-index: 5; }
+@media (min-width: 901px) {
+  .animal[data-id='served'] { --ground-shift: -10px; }
+}
+@media (max-width: 680px) {
+  .animal[data-id='richwife'] { --x: calc(54% - 10px) !important; --ground-shift: -24px; }
+}
