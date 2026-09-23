@@ -20,9 +20,11 @@
   <link rel="stylesheet" href="animal-contrast.css?v=20260921-selected-halo">
   <link rel="stylesheet" href="field-guide.css?v=20260921-woodland-polish">
   <link rel="stylesheet" href="ambient-life.css?v=20260921-pencil-water-flight">
+  <link rel="stylesheet" href="weather.css?v=20260922-pencil-rain">
+  <script src="weather.js?v=20260922-pencil-rain" defer></script>
   <script src="clients.js?v=20260922-client-stories" defer></script>
 </head>
-<body>
+<body data-weather="clear">
   <a class="skip-link" href="#animal-field">Skip to clients</a>
   <main id="main">
     <section class="intro" aria-labelledby="page-title">
@@ -37,6 +39,7 @@
       <div class="field-heading"><p id="field-heading">PICK A COMPANION</p><p>Hover, tap, or use the arrow keys</p></div>
       <div class="animal-stage">
         <div class="ambient-life" aria-hidden="true">
+          <div class="pencil-rain"></div>
           <svg class="creek-surface" viewBox="0 0 1659 948" preserveAspectRatio="xMidYMid slice" focusable="false">
             <defs>
               <!-- Broken, slightly irregular arcs follow the pencil water marks. -->
@@ -61,6 +64,13 @@
               <g class="water-ring"><use href="#pencil-water-ring"/></g>
               <g class="water-ring"><use href="#pencil-water-ring"/></g>
             </g>
+            <g class="rain-ripples">
+              <g transform="translate(774 529) scale(0.32)"><g class="rain-ring" style="--impact-delay: 0.0s"><use href="#pencil-water-ring"/></g></g>
+              <g transform="translate(919 578) scale(0.42)"><g class="rain-ring" style="--impact-delay: -0.57s"><use href="#pencil-water-ring"/></g></g>
+              <g transform="translate(974 647) scale(0.4)"><g class="rain-ring" style="--impact-delay: -1.14s"><use href="#pencil-water-ring"/></g></g>
+              <g transform="translate(1020 735) scale(0.5)"><g class="rain-ring" style="--impact-delay: -1.71s"><use href="#pencil-water-ring"/></g></g>
+              <g transform="translate(869 555) scale(0.28)"><g class="rain-ring" style="--impact-delay: -2.28s"><use href="#pencil-water-ring"/></g></g>
+            </g>
           </svg>
           <div class="forest-flyby"><span class="sketch-bird"></span></div>
         </div>
@@ -75,7 +85,7 @@
         <ul id="client-services" class="services" aria-label="Services"></ul>
         <a id="client-link" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
       </article>
-      <div class="field-footer"><p><span class="motion-dot" aria-hidden="true"></span> Woodland company</p><button id="field-guide-toggle" class="field-guide-toggle" type="button" aria-expanded="false" aria-controls="field-guide">Company key <span aria-hidden="true">↗</span></button></div>
+      <div class="field-footer"><p><span class="motion-dot" aria-hidden="true"></span> Woodland company</p><div class="field-controls"><div class="weather-control" role="group" aria-label="Woodland weather"><button type="button" data-weather-choice="clear" aria-pressed="true">Clear</button><button type="button" data-weather-choice="rain" aria-pressed="false">Rain</button></div><button id="field-guide-toggle" class="field-guide-toggle" type="button" aria-expanded="false" aria-controls="field-guide">Company key <span aria-hidden="true">↗</span></button></div></div>
       <aside id="field-guide" class="field-guide" aria-label="Company key" hidden>
         <div class="field-guide-heading"><p>FIELD GUIDE · 15 COMPANIES</p><button id="field-guide-close" type="button" aria-label="Close company key">×</button></div>
         <div id="company-key" class="company-key"></div>
