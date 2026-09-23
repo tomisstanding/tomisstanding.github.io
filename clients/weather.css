@@ -30,25 +30,8 @@ body[data-weather='rain'] .rain-ripples { opacity: 1; }
   10% { opacity: .65; }
   75%, 100% { opacity: 0; transform: scale(1.1, 1); }
 }
-.field-controls { display: flex; align-items: center; gap: 24px; }
-.weather-control { display: flex; align-items: center; gap: 2px; }
-.field-footer .weather-control button {
-  min-width: 44px; min-height: 44px; padding: 0 7px; border: 0;
-  background: transparent; color: #777e73; font: 10px var(--mono);
-  letter-spacing: .02em; text-underline-offset: 5px;
-}
-.field-footer .weather-control button[aria-pressed='true'] { color: #334032; text-decoration: underline; }
-.field-footer .weather-control button:hover { color: #334032; }
-.weather-control::after { content: ''; height: 18px; width: 1px; background: #8b91844d; margin-left: 16px; }
 @media (max-width: 680px) {
-  .field-controls { gap: 8px; }
-  .weather-control::after { margin-left: 3px; }
-  .field-footer .weather-control button { padding-inline: 4px; font-size: 9px; }
   .rain-stroke:nth-child(n+25) { display: none; }
-  .field-footer { padding-inline: 12px; }
-  .field-footer p { font-size: 8px; letter-spacing: 0; }
-  .field-footer .field-guide-toggle { font-size: 9px; gap: 4px; }
-  .motion-dot { margin-right: 3px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .pencil-rain, .rain-ripples { display: none; }

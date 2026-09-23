@@ -1,6 +1,5 @@
-// Clear on every fresh visit. Weather is a visitor-selected atmosphere, not a forecast.
+// Short showers arrive at irregular intervals, with longer clear spells between them.
 const rainLayer = document.querySelector('.pencil-rain');
-const weatherButtons = [...document.querySelectorAll('[data-weather-choice]')];
 const rain = document.createDocumentFragment();
 for (let i = 0; i < 44; i++) {
   const stroke = document.createElement('span');
@@ -13,13 +12,38 @@ for (let i = 0; i < 44; i++) {
   rain.append(stroke);
 }
 rainLayer.append(rain);
-weatherButtons.forEach(button => button.addEventListener('click', () => {
-  const weather = button.dataset.weatherChoice;
-  document.body.dataset.weather = weather;
-  weatherButtons.forEach(choice => choice.setAttribute('aria-pressed', String(choice === button)));
-}));
+const weatherMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const randomWeatherDelay = (min, max) => (min + Math.random() * (max - min)) * 1000;
+let weatherTimer = null;
+let weatherRemaining = randomWeatherDelay(12, 25);
+let weatherDeadline = 0;
+
+function scheduleWeather() {
+  if (document.hidden || weatherMotion.matches || weatherTimer !== null) return;
+  weatherDeadline = performance.now() + weatherRemaining;
+  weatherTimer = window.setTimeout(() => {
+    weatherTimer = null;
+    const isRaining = document.body.dataset.weather !== 'rain';
+    document.body.dataset.weather = isRaining ? 'rain' : 'clear';
+    weatherRemaining = isRaining ? randomWeatherDelay(14, 24) : randomWeatherDelay(30, 65);
+    scheduleWeather();
+  }, weatherRemaining);
+}
+
 function syncWeatherVisibility() {
-  document.body.classList.toggle('weather-paused', document.hidden);
+  const paused = document.hidden || weatherMotion.matches;
+  document.body.classList.toggle('weather-paused', paused);
+  if (paused && weatherTimer !== null) {
+    window.clearTimeout(weatherTimer);
+    weatherTimer = null;
+    weatherRemaining = Math.max(0, weatherDeadline - performance.now());
+  }
+  if (weatherMotion.matches) {
+    document.body.dataset.weather = 'clear';
+    weatherRemaining = randomWeatherDelay(12, 25);
+  }
+  if (!paused) scheduleWeather();
 }
 document.addEventListener('visibilitychange', syncWeatherVisibility);
+weatherMotion.addEventListener('change', syncWeatherVisibility);
 syncWeatherVisibility();
