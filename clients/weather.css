@@ -38,3 +38,38 @@ body[data-weather='rain'] .rain-ripples { opacity: 1; }
   .animal-stage::before { transition: none; }
 }
 body.weather-paused .ambient-life * { animation-play-state: paused !important; }
+
+/* Leaves carry the wind: a gentle drop, a sideways sweep, then a soft landing. */
+.falling-leaves { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.falling-leaf {
+  position: absolute; left: var(--leaf-x); top: var(--leaf-y);
+  width: var(--leaf-size); height: calc(var(--leaf-size) * 1.28); opacity: 0;
+}
+.falling-leaf svg {
+  width: 100%; height: 100%; fill: #e9e8df; stroke: #626359;
+  stroke-width: .85; stroke-linejoin: round; stroke-linecap: round;
+}
+.falling-leaf .leaf-veins { fill: none; stroke-width: .65; }
+body[data-wind='gust'] .falling-leaf { animation: leaf-drift 9s var(--leaf-delay) linear both; }
+body[data-wind='gust'] .falling-leaf svg { animation: leaf-turn 3s var(--leaf-delay) ease-in-out 3 both; }
+.pencil-rain { transform-origin: center top; transition: opacity .8s ease, transform 2s ease; }
+body[data-wind='gust'] .pencil-rain { transform: skewX(-7deg); }
+@keyframes leaf-drift {
+  0% { opacity: 0; transform: translate3d(0, 0, 0); }
+  10% { opacity: .8; transform: translate3d(3vw, 5svh, 0); }
+  32% { transform: translate3d(13vw, 18svh, 0); }
+  53% { transform: translate3d(34vw, 25svh, 0); }
+  72% { opacity: .75; transform: translate3d(42vw, 42svh, 0); }
+  100% { opacity: 0; transform: translate3d(48vw, 65svh, 0); }
+}
+@keyframes leaf-turn {
+  0%, 100% { transform: rotate(var(--leaf-turn)) scaleX(.9); }
+  35% { transform: rotate(calc(var(--leaf-turn) + 80deg)) scaleX(.45); }
+  70% { transform: rotate(calc(var(--leaf-turn) + 155deg)) scaleX(.85); }
+}
+@media (max-width: 680px) {
+  .falling-leaf:nth-child(n+4) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .falling-leaves { display: none; }
+}
